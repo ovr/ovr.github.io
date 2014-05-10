@@ -1,0 +1,21 @@
+{
+  "name": "ovr.github.io",
+  "version": "0.0.0",
+  "homepage": "https://github.com/ovr/ovr.github.io",
+  "authors": [
+    "Дмитрий Пацура <zaets28rus@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "bootstrap": "~3.1.1",
+    "fontawesome": "~4.0.3",
+    "modernizr": "~2.8.1"
+  }
+}
