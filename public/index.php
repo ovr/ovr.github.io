@@ -14,6 +14,14 @@
 	<link rel="stylesheet" type="text/css" href="/css/component.css" />
 	<link rel="stylesheet" type="text/css" href="/css/about.css	" />
 	<script src="/src/vendor/modernizr/modernizr.js"></script>
+	<script type="text/javascript">
+		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+		try {
+			var pageTracker = _gat._getTracker("UA-20503308-1");
+			pageTracker._trackPageview();
+		} catch(err) {}
+	</script>
 </head>
 <body>
 	<div class="container">
