@@ -1,0 +1,12 @@
+{
+    "name": "zaets28rus/ovr.github.io",
+    "authors": [
+        {
+            "name": "Дмитрий Пацура",
+            "email": "zaets28rus@gmail.com"
+        }
+    ],
+    "require": {
+        "zendframework/zend-debug": "*"
+    }
+}

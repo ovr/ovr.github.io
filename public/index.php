@@ -9,6 +9,7 @@
 	<meta charset="UTF-8">
 	<title>Dmitry Patsura Blog - About Me</title>
 	<link rel="stylesheet" type="text/css" href="/src/vendor/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="/src/vendor/fontawesome/css/font-awesome.min.css" />
 	<link rel="stylesheet" type="text/css" href="/css/normalize.css" />
 	<link rel="stylesheet" type="text/css" href="/css/demo.css" />
 	<link rel="stylesheet" type="text/css" href="/css/component.css" />
@@ -40,11 +41,9 @@
 					</div><!-- /gn-scroller -->
 				</nav>
 			</li>
-			<li></li>
+			<li><a href="https://github.com/ovr" class="codrops-icon fa-github fa-2x pull-right">Github Profile</a></li>
+			<li><a href="skype:izaets28rus?chat" class="codrops-icon fa-skype  fa-2x pull-right">Contact me by Skype</a></li>
 		</ul>
-		<div>
-
-		</div>
 	</div><!-- /container -->
 	<div class="container" id="about">
 		<div class="page-header">
@@ -58,7 +57,7 @@
 				<img src="/img/572096.jpg">
 			</div>
 			<div class="col-lg-6 col-md-12">
-				test
+				Text about me bla bla bla
 			</div>
 		</div>
 		<div class="row">
@@ -96,6 +95,24 @@
 					<li>Bootstrap,</li>
 					<li>Backbone,</li>
 				</ul>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-6 col-md-12">
+				<h3>Work ex</h3>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-6 col-md-12">
+				<h3>Education</h3>
+				BGPU 2014-2017 Math, Programming profile
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-6 col-md-12">
+				<h3>Contact Me</h3>
+				skype: izaets28rus
+				email: zaets28rus@gmail.com
 			</div>
 		</div>
 	</div>

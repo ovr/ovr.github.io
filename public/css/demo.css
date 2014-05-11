@@ -72,7 +72,7 @@
 }
 
 .codrops-icon:before {
-	font-family: 'codropsicons';
+	font-family: FontAwesome;
 	margin: 0 4px;
 	speak: none;
 	font-style: normal;
