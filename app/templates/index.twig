@@ -1,0 +1,17 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+
+	{% for article in articles %}
+		<div class="col-md-10 blogShort">
+			<h1>{{ article.title }}</h1>
+
+			<article>
+				<p>
+				</p>
+			</article>
+			<a class="btn btn-blog pull-right marginBottom10" href="/article/{{ article.name }}/">READ MORE</a>
+		</div>
+	{% endfor %}
+
+{% endblock %}

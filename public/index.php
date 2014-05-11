@@ -3,6 +3,9 @@
  * @author: Patsura Dmitry <zaets28rus@gmail.com>
  */
 
+ini_set('display_errors', 1);
+error_reporting(-1);
+
 include_once __DIR__ . '/../vendor/autoload.php';
 
 use Zend\Debug\Debug;
@@ -15,6 +18,14 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
 	$r->addRoute('GET', '/about', 'about');
 	$r->addRoute('GET', '/article/{title}/', 'article');
 });
+
+chdir(__DIR__ . '/../app');
+
+$loader = new Twig_Loader_Filesystem('templates');
+$twig = new Twig_Environment($loader, array(
+	'cache' => 'data/twig_cache',
+	'auto_reload' => true
+));
 
 $routeInfo = $dispatcher->dispatch($httpMethod, $uri);
 switch ($routeInfo[0]) {
@@ -31,15 +42,17 @@ switch ($routeInfo[0]) {
 
 		switch ($handler) {
 			case 'article':
-				include_once __DIR__ . '/../app/article.php';
+				echo $twig->render('article.twig', array(
+					'article' => json_decode(file_get_contents('articles.json'))[0],
+					'article_html' => file_get_contents('data/cache/phalcon_It_is_not_the_best.html')
+				));
 				break;
 			case 'default':
-				include_once __DIR__ . '/../app/index.php';
+				echo $twig->render('index.twig', array('articles' => json_decode(file_get_contents('articles.json'))));
 				break;
 			case 'about':
-				include_once __DIR__ . '/../app/about.php';
+				echo $twig->render('about.twig');
 				break;
 		}
-
 		break;
 }
