@@ -7,8 +7,9 @@
 			<h1>{{ article.title }}</h1>
 
 			<article>
-				<p>
-				</p>
+				{% autoescape false %}
+					{{ article.intro_text }}
+				{% endautoescape %}
 			</article>
 			<a class="btn btn-blog pull-right marginBottom10" href="/article/{{ article.name }}/">READ MORE</a>
 		</div>
