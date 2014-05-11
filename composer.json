@@ -9,6 +9,7 @@
     "require": {
         "zendframework/zend-debug": "*",
         "zendframework/zend-escaper": "*",
-        "nikic/fast-route": "*"
+        "nikic/fast-route": "*",
+        "michelf/php-markdown": "*"
     }
 }

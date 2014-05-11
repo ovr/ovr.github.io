@@ -13,6 +13,7 @@ $uri = $_SERVER['REQUEST_URI'];
 $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
 	$r->addRoute('GET', '/', 'default');
 	$r->addRoute('GET', '/about', 'about');
+	$r->addRoute('GET', '/article/{title}/', 'article');
 });
 
 $routeInfo = $dispatcher->dispatch($httpMethod, $uri);
@@ -29,12 +30,14 @@ switch ($routeInfo[0]) {
 		$vars = $routeInfo[2];
 
 		switch ($handler) {
+			case 'article':
+				include_once __DIR__ . '/../app/article.php';
+				break;
 			case 'default':
-				header('location: /about');
-				exit;
+				include_once __DIR__ . '/../app/index.php';
 				break;
 			case 'about':
-				include_once __DIR__ . '/../app/index.php';
+				include_once __DIR__ . '/../app/about.php';
 				break;
 		}
 

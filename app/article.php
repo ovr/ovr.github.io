@@ -50,24 +50,8 @@
 	</div><!-- /container -->
 	<div class="container" id="about">
 		<?php
-			$articles = json_decode(file_get_contents(__DIR__ . '/articles.json'));
+			echo file_get_contents(__DIR__ . '/data/cache/phalcon_It_is_not_the_best.html');
 		?>
-
-		<?php foreach($articles as $article) : ?>
-			<div class="col-md-10 blogShort">
-				<h1><?php echo $article->title; ?></h1>
-
-				<article>
-					<p>
-						<?php
-							$file = __DIR__. '/data/cache/'.$article->name.'.html';
-							$fileHande = fopen($file, 'r');
-						?>
-					</p>
-				</article>
-				<a class="btn btn-blog pull-right marginBottom10" href="/article/<?php echo $article->name; ?>/">READ MORE</a>
-			</div>
-		<?php endforeach; ?>
 	</div>
 	<script src="/src/lib/classie.js"></script>
 	<script src="/src/lib/gnmenu.js"></script>
