@@ -65,7 +65,8 @@
 				<h3>Programming Languages</h3>
 				<ul class="list-unstyled list-inline">
 					<li>PHP,</li>
-					<li>C/C++</li>
+					<li>C/C++,</li>
+					<li>Javascript</li>
 				</ul>
 			</div>
 			<div class="col-lg-6 col-md-12">
@@ -99,7 +100,34 @@
 		</div>
 		<div class="row">
 			<div class="col-lg-6 col-md-12">
-				<h3>Work ex</h3>
+				<h3>Work experience</h3>
+				<div class="profile_info">
+					<div class="clear_fix profile_career_row">
+						<div class="label fl_l">Место работы:</div>
+						<div class="labeled fl_l"><a href="http://artlime.ru/">Lime Design Studio</a><br>Благовещенск, 2010–2010<br><a href="#php-backend">PHP Программист</a></div>
+					</div><div class="clear_fix profile_career_row block">
+						<div class="label fl_l">Место работы:</div>
+						<div class="labeled fl_l"><a href="http://amur.net/">Amur.net</a><br>Благовещенск, 2010–2011<br><a href="#php-backend">PHP программист</a></div>
+					</div><div class="clear_fix profile_career_row block">
+						<div class="label fl_l">Место работы:</div>
+						<div class="labeled fl_l"><a href="http://artlime.ru/">Lime Design Studio</a><br>Благовещенск, 2011–2011<br><a href="#php-backend">PHP Программист</a></div>
+					</div><div class="clear_fix profile_career_row block">
+						<div class="label fl_l">Место работы:</div>
+						<div class="labeled fl_l"><a href="http://uniqhand.ru/">Uniqhand.ru</a><br>Благовещенск, 2011–2014<br><a href="#php-backend">PHP Программист</a></div>
+					</div><div class="clear_fix profile_career_row block">
+						<div class="label fl_l">Место работы:</div>
+					</div>
+					<div class="labeled fl_l"><a href="http://en.wikipedia.org/wiki/Freelancer">Freelance</a><br>Благовещенск, 2014–2014<br><a href="#php-backend">Веб программист</a></div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-6 col-md-12">
+				<h3>Open source</h3>
+				<p>
+					I love this word. I am an active contributer in <a href="#">zephir</a> project.
+					Zephir is a compiled high level language aimed to the creation of C-extensions for PHP http://zephir-lang.com/.
+				</p>
 			</div>
 		</div>
 		<div class="row">
@@ -108,11 +136,36 @@
 				BGPU 2014-2017 Math, Programming profile
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-lg-6 col-md-12">
-				<h3>Contact Me</h3>
-				skype: izaets28rus
-				email: zaets28rus@gmail.com
+		<div class="row top-buffer">
+			<div class="container">
+				<div class="well well-sm quick-contact">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="row">
+								<div class="col-md-4">
+									<h1 class="title-contact">
+										Quick Contact</h1>
+								</div>
+								<div class="col-md-4 contact-email">
+									<h2>zaets28rus@gmail.com</h2>
+									<h3>+7 962 283 78 83</h3>
+								</div>
+								<div class="col-md-4">
+									<div class="row contact row-first">
+										<div class="col-md-6">
+											<a href="skype:izaets28rus?chat" class="skype"><i class="fa fa-skype"></i>izaets28rus</a>
+										</div>
+									</div>
+									<div class="row contact">
+										<div class="col-md-6">
+											<a href="https://vk.com/zaets28rus" class="linkedin"><i class="fa fa-linkedin"></i>ВКонтакте</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
