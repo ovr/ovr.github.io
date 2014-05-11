@@ -49,6 +49,7 @@
 		</ul>
 	</div><!-- /container -->
 	<div class="container" id="about">
+		<h1>Почему Phalcon это не обязательно хорошо?</h1>
 		<?php
 			echo file_get_contents(__DIR__ . '/data/cache/phalcon_It_is_not_the_best.html');
 		?>
