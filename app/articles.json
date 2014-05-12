@@ -1,13 +1,5 @@
 [
     {
-        "title": "Dev сборки phalcon что это?",
-        "name": "how_to_compile_phalcon",
-        "intro_text_start_html_line": 0,
-        "intro_text_end_html_line": 2,
-        "tags": ["php", "phalcon", "myview"],
-        "comments": true
-    },
-    {
         "title": "Почему Phalcon это не обязательно хорошо?",
         "name": "phalcon_It_is_not_the_best",
         "intro_text_start_html_line": 3,
