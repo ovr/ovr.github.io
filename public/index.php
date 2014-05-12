@@ -42,9 +42,17 @@ switch ($routeInfo[0]) {
 
 		switch ($handler) {
 			case 'article':
+				$articles = json_decode(file_get_contents('articles.json'));
+
+				foreach($articles as $article) {
+					if ($article->name == $vars['title']) {
+						break;
+					}
+				}
+
 				echo $twig->render('article.twig', array(
-					'article' => json_decode(file_get_contents('articles.json'))[0],
-					'article_html' => file_get_contents('data/cache/phalcon_It_is_not_the_best.html')
+					'article' => $article,
+					'article_html' => file_get_contents('data/cache/'.$article->name.'.html')
 				));
 				break;
 			case 'default':
