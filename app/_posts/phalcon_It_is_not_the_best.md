@@ -40,7 +40,7 @@
 В последние пол года появилось крайне много заготовок на Phalcon.
 
 -	[Phalcony Module Skeleton With Phalcony](https://github.com/ovr/phalcon-module-phalcony-skeleton)
--	[Заготовка от Mruz](https://github.com/mruz/base-app)
+-	[Заготовка от @mruz](https://github.com/mruz/base-app)
 -	[Сборник приложений от @phalcon](https://github.com/phalcon/mvc)
 
 ## И что же сейчас делать?
