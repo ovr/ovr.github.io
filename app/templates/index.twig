@@ -2,17 +2,35 @@
 
 {% block content %}
 
-	{% for article in articles %}
-		<div class="col-md-10 blogShort">
-			<h1>{{ article.title }}</h1>
+	<div class="row">
+		<div class="col-lg-10 col-md-12">
+			{% for article in articles %}
+				<div class="col-md-10 blogShort">
+					<h1>{{ article.title }}</h1>
 
-			<article>
-				{% autoescape false %}
-					{{ article.intro_text }}
-				{% endautoescape %}
-			</article>
-			<a class="btn btn-blog pull-right marginBottom10" href="/article/{{ article.name }}/">READ MORE</a>
+					<article>
+						{% autoescape false %}
+						{{ article.intro_text }}
+						{% endautoescape %}
+					</article>
+
+					<a class="btn btn-blog pull-right marginBottom10" href="/article/{{ article.name }}/">READ MORE</a>
+				</div>
+			{% endfor %}
 		</div>
-	{% endfor %}
+		<div class="col-lg-2 col-md-2">
+			<script type="text/javascript" src="//vk.com/js/api/openapi.js?112"></script>
+
+			<div id="phalcon_vk" class="panel"></div>
+			<script type="text/javascript">
+				VK.Widgets.Group("phalcon_vk", {mode: 0, width: "220", height: "250", color1: 'FFFFFF', color2: '2B587A', color3: '5B7FA6'}, 45934290);
+			</script>
+
+			<div id="zephir_vk" class="panel"></div>
+			<script type="text/javascript">
+				VK.Widgets.Group("zephir_vk", {mode: 0, width: "220", height: "250", color1: 'FFFFFF', color2: '2B587A', color3: '5B7FA6'}, 67722434);
+			</script>
+		</div>
+	</div>
 
 {% endblock %}

@@ -328,3 +328,5 @@ input.gn-search:focus {
 	background-color:#34ca78;
 	border-color: #34ca78;
 }
+
+.blogShort {overflow: hidden;}
