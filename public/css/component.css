@@ -330,3 +330,10 @@ input.gn-search:focus {
 }
 
 .blogShort {overflow: hidden;}
+.share-block {
+	padding-top: 10px;
+	padding-bottom: 20px;
+}
+.share-block .b-share {
+	padding-left: 0 !important;
+}
