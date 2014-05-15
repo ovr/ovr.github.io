@@ -1,6 +1,11 @@
 {% extends "layout.twig" %}
 
 {% block title %}{{ article.title }}{% endblock %}
+{% block meta %}
+	<meta property="og:title" content="{{ article.title }}"/>
+	<meta property="og:image" content="http://dmtry.me/img/articles/{{ article.id }}.jpg"/>
+	<meta property="og:description" content="{{ article.intro_text }}"/>
+{% endblock %}
 
 {% block content %}
 
