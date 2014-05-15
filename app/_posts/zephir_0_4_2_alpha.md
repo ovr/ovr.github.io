@@ -7,9 +7,9 @@
 -	Поддержка PHP 5.6
 -	Поддержка property-string-access ( $class->{"property"} )
 -	Поддержка Exit и Die
--	Поддержка \ArrayObject
--	Поддержка \PdoStatement
--	Поддержка \ErrorException
+-	Поддержка ArrayObject
+-	Поддержка PdoStatement
+-	Поддержка ErrorException
 -	Stubs\Generator док блоки
 -	ArrayType builtin method reversed and rev alias
 
