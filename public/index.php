@@ -64,6 +64,7 @@ switch ($routeInfo[0]) {
 				break;
 			case 'default':
 				$articles = json_decode(file_get_contents('articles.json'));
+
 				foreach ($articles as $key => $article) {
 					$intro_text = file('data/cache/'.$article->name.'.html');
 					$articles[$key]->intro_text = implode('', array_slice($intro_text, $article->intro_text_start_html_line, $article->intro_text_end_html_line-$article->intro_text_start_html_line));
