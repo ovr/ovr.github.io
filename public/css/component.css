@@ -337,3 +337,12 @@ input.gn-search:focus {
 .share-block .b-share {
 	padding-left: 0 !important;
 }
+
+.margin-centred {
+	margin: 0 auto;
+}
+
+.youtube-iframe {
+	margin: 10px 0;
+	text-align: center;
+}

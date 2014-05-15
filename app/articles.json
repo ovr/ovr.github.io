@@ -7,5 +7,14 @@
         "tags": ["php", "phalcon", "myview"],
         "comments": true,
         "id": 1
+    },
+    {
+        "title": "Базовая подсветка синтаксиса Zephir в PhpStorm",
+        "name": "phpstorm_zephir_bundle",
+        "intro_text_start_html_line": 0,
+        "intro_text_end_html_line": 2,
+        "tags": ["zephir", "phpstorm"],
+        "comments": true,
+        "id": 2
     }
 ]
