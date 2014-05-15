@@ -1,6 +1,9 @@
 {% extends "layout.twig" %}
 
 {% block title %}{{ article.title }}{% endblock %}
+{% block leftHeaderLinks %}
+	<li><a href="/" class="codrops-icon fa-2x pull-left">Статьи</a></li>
+{% endblock %}
 {% block meta %}
 	<meta property="og:title" content="{{ article.title }}"/>
 	<meta property="og:url" content="http://dmtry.me/article/{{ article.name }}/"/>
