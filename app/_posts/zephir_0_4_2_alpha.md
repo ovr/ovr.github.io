@@ -35,7 +35,7 @@
 
 За разработку:
 
--	[Andres Gutierrez @andresgutierrez](github.com/andresgutierrez)
+-	[Andres Gutierrez @andresgutierrez](https://github.com/andresgutierrez)
 -	[Gusakov Nikita @nkt](https://github.com/nkt)
 -	[Yeung Song @netyum](https://github.com/netyum)
 -	А так же ваш покорный слуга :)
