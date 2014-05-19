@@ -10,7 +10,6 @@
         "zendframework/zend-debug": "*",
         "zendframework/zend-escaper": "*",
         "nikic/fast-route": "*",
-        "michelf/php-markdown": "*",
         "twig/twig": "1.*"
     }
 }

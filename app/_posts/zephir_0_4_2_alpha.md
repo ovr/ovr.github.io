@@ -1,5 +1,4 @@
-В середине мая нас встречает большое обновление языка Zephir с номером 0.4.2 alpha.
-Очень давно мы уже не делали обновление версий, но сегодня это случилось :)
+В середине мая нас встречает большое обновление языка Zephir с номером 0.4.2 alpha. Очень давно мы уже не делали обновление версий, но сегодня это случилось :)
 
 ## Что нового добавлено?
 
@@ -18,7 +17,7 @@
 -	Поддержка мультистрочности в строках
 -	CastOperator приведение типов
 -	UnsetStatement исправлена работа с типом array
--	#316 - static property variable concat with variable)
+-	316 issue - static property variable concat with variable)
 -	Оптимизатор для array_key_exists
 -	Removing debug symbols generation in ext/install
 -	Abstract method

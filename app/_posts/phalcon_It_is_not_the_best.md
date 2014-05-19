@@ -7,11 +7,11 @@
 
 -	Phalcon версии 1. *Написан на Си. Сейчас Вы, наверное, задумались о производительности, но только часть опытных пользователей задумалась о том, кто в случае багов будет заниматься их исправлением.
 	Поверьте, что Вы наткнетесь на баг не один раз. Опять же, Вы подумали о том, что обратитесь за помощью к сообществу, и баг так или иначе могут утрясти. Только у меня висит 5 открытых багов: <br />
-	[[BUG] \Phalcon\Mvc\Model\Query\Builder](https://github.com/phalcon/cphalcon/issues/1542) <br />
-	[Мультимодульное приложение не сохраняет модель по связи](https://github.com/phalcon/cphalcon/issues/1296) <br />
-	[А DI не Depency Injection а Registry](https://github.com/phalcon/cphalcon/issues/1209) <br />
-	[[NFR] QueryBuilder count method](https://github.com/phalcon/cphalcon/issues/1156) <br />
-	[QueryBuilder беда с мультимодульностью](https://github.com/phalcon/cphalcon/issues/1111) <br />
+	[[BUG] \Phalcon\Mvc\Model\Query\Builder](https://github.com/phalcon/cphalcon/issues/1542)
+	[Мультимодульное приложение не сохраняет модель по связи](https://github.com/phalcon/cphalcon/issues/1296)
+	[А DI не Depency Injection а Registry](https://github.com/phalcon/cphalcon/issues/1209)
+	[[NFR] QueryBuilder count method](https://github.com/phalcon/cphalcon/issues/1156)
+	[QueryBuilder беда с мультимодульностью](https://github.com/phalcon/cphalcon/issues/1111)
 	[[BUG] \Phalcon\Mvc\View](https://github.com/phalcon/cphalcon/issues/1282)
 
 	Однако, если у Вас есть опыт программирования на си или Вы хотите его получить, сообщество с радостью примет исправление багов или будет получать NFR запросы на новый функционал в репозиторий.
@@ -26,9 +26,9 @@
 	На более или менее большом проекте у Вас сразу же возникнет проблема с отсутствием поддержки подзапросов в QueryBuilder, но это только начало проблемы.
 	Потом я наткнулся на leftJoin и проблему с n+1 в обработке коррекции (допустим, мне нужно выбрать product с пользователем, вроде бы и запрос правильный, но при обработке связи выполняется дополнительный select запрос по primary id модели, идущей по связи).
 
-	Пример того что я описал, только уже в багтрекере: <br />
-	[Нет поддержки субзапросов в PHQL](https://github.com/phalcon/cphalcon/issues/496) <br />
-	[QueryBuilder - нет поддержки RAW SQL](https://github.com/phalcon/cphalcon/issues/2052) <br />
+	Пример того что я описал, только уже в багтрекере:
+	[Нет поддержки субзапросов в PHQL](https://github.com/phalcon/cphalcon/issues/496)
+	[QueryBuilder - нет поддержки RAW SQL](https://github.com/phalcon/cphalcon/issues/2052)
 	[QueryBuilder - нет поддержки CRUD (insert) запросов](https://github.com/phalcon/cphalcon/issues/1925)
 
 -	[Image](https://github.com/phalcon/phalco - класс для работы с картинками.
