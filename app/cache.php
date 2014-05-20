@@ -1,9 +1,6 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Администратор
- * Date: 11.05.2014
- * Time: 16:11
+ * @author: Patsura Dmitry <zaets28rus@gmail.com>
  */
 
 include_once __DIR__ . '/../vendor/autoload.php';

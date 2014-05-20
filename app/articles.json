@@ -3,10 +3,12 @@
         "title": "Вышел долгожданный Zephir 0.4.2 alpha",
         "name": "zephir_0_4_2_alpha",
         "intro_text_start_html_line": 0,
-        "intro_text_end_html_line": 3,
+        "intro_text_end_html_line": 2,
         "tags": ["zephir", "zephir-changelog"],
         "comments": true,
-        "id": 3
+        "id": 3,
+        "dateCreated": "2014-05-20 13:07:09",
+        "dateModified": "2014-05-20 13:07:09"
     },
     {
         "title": "Базовая подсветка синтаксиса Zephir в PhpStorm",
@@ -15,15 +17,19 @@
         "intro_text_end_html_line": 2,
         "tags": ["zephir", "phpstorm"],
         "comments": true,
-        "id": 2
+        "id": 2,
+        "dateCreated": "2014-05-20 13:07:09",
+        "dateModified": "2014-05-20 13:07:09"
     },
     {
         "title": "Почему Phalcon это не обязательно хорошо?",
-        "name": "phalcon_It_is_not_the_best",
+        "name": "phalcon_it_is_not_the_best",
         "intro_text_start_html_line": 3,
         "intro_text_end_html_line": 5,
         "tags": ["php", "phalcon", "myview"],
         "comments": true,
-        "id": 1
+        "id": 1,
+        "dateCreated": "2014-05-20 13:07:09",
+        "dateModified": "2014-05-20 13:07:09"
     }
 ]

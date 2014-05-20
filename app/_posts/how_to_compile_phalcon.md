@@ -27,7 +27,7 @@ phpize
 
 Создадим файл example.cpp с содержанием
 
-```
+```c++
 #include <cstdlib>
 #include <iostream>
 
@@ -108,4 +108,12 @@ Build это сконеретинированные си файлы в один 
 
 ```
 cd ext && phpize && ./configure CFLAGS="-g3 -O1 -fno-delete-null-pointer-checks -Wall -fvisibility=hidden" && make clean && make -B && sudo make install && service php5-fpm restart
+```
+
+```php
+class Test {
+	public function main($a = 'sdfsd') {
+		return false;
+	}
+}
 ```
