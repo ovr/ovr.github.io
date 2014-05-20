@@ -5,7 +5,7 @@
 {% block content %}
 
 	<div class="row">
-		<div class="col-lg-10 col-md-12">
+		<div class="col-12 col-sm-8 col-lg-8 clearfix">
 			{% for article in articles %}
 				<div class="col-md-10 blogShort">
 					<h1>{{ article.title }}</h1>
@@ -20,17 +20,38 @@
 				</div>
 			{% endfor %}
 		</div>
-		<div class="col-lg-2 col-md-2">
+		<div class="col-6 col-sm-4 col-lg-4">
+			<div class="widget HTML" id="HTML2">
+				<h2 class="title">Подписка</h2>
+				<div class="widget-content">
+					<div class="well">
+						<form action="http://feedburner.google.com/fb/a/mailverify" method="post" onsubmit="window.open(&quot;http://feedburner.google.com/fb/a/mailverify?uri=skyafar_com&quot;, &quot;popupwindow&quot;, &quot;scrollbars=yes,width=550,height=520&quot;); return true" target="popupwindow">
+							<fieldset>
+								<div class="form-group">
+									<input id="follow-by-email-address" name="email" placeholder="Email address..." type="text" class="form-control">
+								</div>
+								<div class="form-group">
+									<input id="follow-by-email-submit" type="submit" value="Submit" class="btn btn-primary btn-block"> <input name="uri" type="hidden" value="skyafar_com"> <input name="loc" type="hidden" value="en_US">
+								</div>
+							</fieldset>
+						</form>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+
+			<h2 class="title">Будь с нами</h2>
+
 			<script type="text/javascript" src="//vk.com/js/api/openapi.js?112"></script>
 
 			<div id="phalcon_vk" class="panel"></div>
 			<script type="text/javascript">
-				VK.Widgets.Group("phalcon_vk", {mode: 0, width: "220", height: "250", color1: 'FFFFFF', color2: '2B587A', color3: '5B7FA6'}, 45934290);
+				VK.Widgets.Group("phalcon_vk", {mode: 0, width: "360", height: "250", color1: 'FFFFFF', color2: '2B587A', color3: '5B7FA6'}, 45934290);
 			</script>
 
 			<div id="zephir_vk" class="panel"></div>
 			<script type="text/javascript">
-				VK.Widgets.Group("zephir_vk", {mode: 0, width: "220", height: "250", color1: 'FFFFFF', color2: '2B587A', color3: '5B7FA6'}, 67722434);
+				VK.Widgets.Group("zephir_vk", {mode: 0, width: "360", height: "250", color1: 'FFFFFF', color2: '2B587A', color3: '5B7FA6'}, 67722434);
 			</script>
 		</div>
 	</div>
