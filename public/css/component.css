@@ -346,3 +346,10 @@ input.gn-search:focus {
 	margin: 10px 0;
 	text-align: center;
 }
+
+#phalcon_vk,
+#phalcon_vk iframe,
+#zephir_vk,
+#zephir_vk iframe {
+	width: 100% !important;
+}
