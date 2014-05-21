@@ -105,7 +105,7 @@ Build это сконеретинированные си файлы в один 
 Они нужный для более быстрой компиляции и более мощных преобразований на уровни компилятора.
 Собираются они через скрипт лежаший в ./build/gen-build.php, обычный за генерацией билдов следит человек из phalcon team (niden, phalcon, sjinks).
 
-### Так в итоге как же скомпилировать dev сборку из исходников в 1 строку?
+### Так в итоге как же скомпилировать Dev сборку из исходников в 1 строку?
 
 ```
 cd ext && phpize && ./configure CFLAGS="-g3 -O1 -fno-delete-null-pointer-checks -Wall -fvisibility=hidden" && make clean && make -B && sudo make install && service php5-fpm restart
