@@ -5,8 +5,6 @@
 
 include_once __DIR__ . '/../vendor/autoload.php';
 
-use \Michelf\Markdown;
-
 $articles = json_decode(file_get_contents(__DIR__ . '/articles.json'));
 
 function getRenderedHTML($value) {
@@ -18,6 +16,10 @@ function getRenderedHTML($value) {
 
     //Build headers
     $headers=array("Content-type: application/json", "User-Agent: curl");
+
+    $config = include __DIR__ . '/config/config.php';
+    $encoded = base64_encode($config['github']['username'].':'.$config['github']['password']);
+    $headers[]="Authorization: Basic $encoded";
 
     //Build curl request to github's api
     $curl=curl_init('https://api.github.com/markdown');
