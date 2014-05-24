@@ -8,7 +8,11 @@
 		<div class="col-12 col-sm-8 col-lg-8 clearfix">
 			{% for article in articles %}
 				<div class="col-md-10 blogShort">
-					<h1>{{ article.title }}</h1>
+					<h1>
+						<a href="/article/{{ article.name }}/">
+							{{ article.title }}
+						</a>
+					</h1>
 
 					<article>
 						{% autoescape false %}
