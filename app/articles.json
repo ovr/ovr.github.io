@@ -1,15 +1,15 @@
 [
     {
-        "title": "Как скомпилировать Dev сборку Phalcon?",
+        "title": "Как скомпилировать Dev-сборку Phalcon?",
         "name": "how_to_compile_phalcon",
         "intro_text_start_html_line": 3,
         "intro_text_end_html_line": 5,
-        "tags": ["phalcon", "php", "php-dev"],
+        "tags": ["phalcon", "php", "php-dev", "c"],
         "comments": true,
         "id": 4,
-        "dateCreated": "2014-05-21 16:41:10",
-        "dateModified": "2014-05-21 16:41:10",
-        "published": false
+        "dateCreated": "2014-05-24 23:10:00",
+        "dateModified": "2014-05-24 23:10:00",
+        "published": true
     },
     {
         "title": "Вышел долгожданный Zephir 0.4.2 alpha",
