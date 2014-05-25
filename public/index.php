@@ -34,6 +34,7 @@ $routeInfo = $dispatcher->dispatch($httpMethod, $uri);
 switch ($routeInfo[0]) {
     case FastRoute\Dispatcher::METHOD_NOT_ALLOWED:
 	case FastRoute\Dispatcher::NOT_FOUND:
+        header('Status: 404 Not Found');
         echo $twig->render('not-found.twig');
 		break;
 	case FastRoute\Dispatcher::FOUND:
