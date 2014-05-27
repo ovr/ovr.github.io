@@ -353,3 +353,7 @@ input.gn-search:focus {
 #zephir_vk iframe {
 	width: 100% !important;
 }
+
+#content {
+	margin-top: 120px;
+}
