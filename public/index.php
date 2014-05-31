@@ -29,6 +29,7 @@ $twig = new Twig_Environment($loader, array(
 	'auto_reload' => true
 ));
 $twig->addExtension(new \App\Twig\Extension());
+$twig->addExtension(new \Twig_Extensions_Extension_I18n());
 
 $routeInfo = $dispatcher->dispatch($httpMethod, $uri);
 switch ($routeInfo[0]) {

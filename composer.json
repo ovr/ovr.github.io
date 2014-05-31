@@ -12,6 +12,7 @@
         "zendframework/zend-feed": "*",
         "zendframework/zend-servicemanager": "*",
         "nikic/fast-route": "*",
-        "twig/twig": "1.*"
+        "twig/twig": "1.*",
+        "twig/extensions": "1.*"
     }
 }

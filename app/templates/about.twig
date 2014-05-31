@@ -14,8 +14,11 @@
 		</div>
 		<div class="col-lg-6 col-md-12">
 			<p>
-				Hi everyone :) My name is Dmitry Patsura. I am {{ dmitry_ages() }} years old. I worked for web programming last 4 years + and I love it. Now I study computer science in <a href="http://bgpu.ru?dmtry.me">Blagoveshensk University</a>.
+				{% set ages = dmitry_ages() %}
+				{% trans %}
+				Hi everyone :) My name is Dmitry Patsura. I am {{ ages }} years old. I worked for web programming last 4 years + and I love it. Now I study computer science in <a href="http://bgpu.ru?dmtry.me">Blagoveshensk University</a>.
 				I love open source and it is my main reason for write and contribute projects. Last year I start contribute zephir-language, and now I will start to contribute phalcon framework.
+				{% endtrans %}
 			</p>
 			<p>
 				In th 10 May, 2014 I decided that I would like to start my personal blog. In this blog I would write articles about phalcon, zephir, php, c++ programming and web technologies.
