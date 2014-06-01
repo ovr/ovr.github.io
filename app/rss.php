@@ -20,6 +20,10 @@ $feed->setDateModified(time());
 $articles = json_decode(file_get_contents(__DIR__ . '/articles.json'));
 
 foreach($articles as $article) {
+    if (!$article->published) {
+        continue;
+    }
+
     $entry = $feed->createEntry();
     $entry->setId(''.$article->id);
     $entry->setTitle($article->title);
