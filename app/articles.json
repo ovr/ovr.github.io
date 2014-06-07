@@ -1,5 +1,17 @@
 [
     {
+        "title": "Что такое JIT? И почему я буду любить AST",
+        "name": "all_about_optimizations",
+        "intro_text_start_html_line": 0,
+        "intro_text_end_html_line": 2,
+        "tags": ["jit", "aot", "компиляция"],
+        "comments": true,
+        "id": 4,
+        "dateCreated": "2014-05-24 23:10:00",
+        "dateModified": "2014-05-24 23:10:00",
+        "published": false
+    },
+    {
         "title": "Как скомпилировать Dev-сборку Phalcon?",
         "name": "how_to_compile_phalcon",
         "intro_text_start_html_line": 0,
