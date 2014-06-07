@@ -1,6 +1,6 @@
 [
     {
-        "title": "Что такое JIT? И почему я буду любить AST",
+        "title": "AST/JIT & Компиляция/Интерплитация",
         "name": "all_about_optimizations",
         "intro_text_start_html_line": 0,
         "intro_text_end_html_line": 2,
