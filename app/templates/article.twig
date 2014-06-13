@@ -16,7 +16,9 @@
 	<h1>{{ article.title }}</h1>
 
 	{% autoescape false %}
+	<article>
 		{{ article_html }}
+	</article>
 	{% endautoescape %}
 
 	<div class="row">
