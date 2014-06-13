@@ -1,6 +1,6 @@
 [
     {
-        "title": "AST/JIT & Компиляция/Интерплитация",
+        "title": "AST/JIT & Компиляция/Интерпретация",
         "name": "jit_aot_optimizations",
         "intro_text_start_html_line": 0,
         "intro_text_end_html_line": 2,
