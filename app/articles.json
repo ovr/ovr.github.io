@@ -1,15 +1,15 @@
 [
     {
         "title": "AST/JIT & Компиляция/Интерплитация",
-        "name": "all_about_optimizations",
+        "name": "jit_aot_optimizations",
         "intro_text_start_html_line": 0,
         "intro_text_end_html_line": 2,
         "tags": ["jit", "aot", "компиляция"],
         "comments": true,
         "id": 5,
-        "dateCreated": "2014-06-07 19:44:00",
-        "dateModified": "2014-06-07 19:44:00",
-        "published": false
+        "dateCreated": "2014-06-13 20:44:00",
+        "dateModified": "2014-06-13 20:44:00",
+        "published": true
     },
     {
         "title": "Как скомпилировать Dev-сборку Phalcon?",
