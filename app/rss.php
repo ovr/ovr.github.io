@@ -15,11 +15,14 @@ $feed->addAuthor(array(
     'email' => 'zaets28rus@gmail.com',
     'uri'   => 'http://dmtry.me/about',
 ));
-$feed->setDateModified(time());
 
 $articles = json_decode(file_get_contents(__DIR__ . '/articles.json'));
 
+$latestTime = 0;
+
 foreach($articles as $article) {
+    $latestTime = max($latestTime, strtotime($article->dateModified));
+
     if (!$article->published) {
         continue;
     }
@@ -44,5 +47,6 @@ foreach($articles as $article) {
     $feed->addEntry($entry);
 }
 
+$feed->setDateModified($latestTime);
 file_put_contents(__DIR__ . '/../public/rss/atom.xml', $feed->export('Atom'));
 file_put_contents(__DIR__ . '/../public/rss/rss.xml', $feed->export('Rss'));
