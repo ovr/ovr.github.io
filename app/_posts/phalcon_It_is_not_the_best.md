@@ -52,7 +52,7 @@
 ## Часто задаваемые вопросы
 
 - 	Где найти [готовые решения](http://vk.com/topic-45934290_28803365)?
--	Где лежит Phalcon 2.0? Она лежит в [ветки 2.0.0 основного репозитория на github](https://github.com/phalcon/cphalcon/tree/2.0.0).
+-	Где лежит Phalcon 2.0? Она лежит в [ветке 2.0.0 основного репозитория на github](https://github.com/phalcon/cphalcon/tree/2.0.0).
 
 ## Вывод
 Всем, кто не испугался начать проект уже после прочтения, я говорю: "Приветствую Вас в Phalcon Community и Happy Coding With Phalcon".
