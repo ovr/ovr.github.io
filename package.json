@@ -1,29 +1,24 @@
 {
   "name": "ovr.github.io",
-  "version": "0.0.0",
-  "description": "",
-  "main": "index.js",
-  "devDependencies": {
-    "gulp": "^3.5.6",
-    "gulp-connect": "^1.0.7",
-    "gulp-concat": "^2.1.7",
-    "gulp-minify-css": "^0.3.0",
-    "gulp-uglify": "^0.2.1",
-    "gulp-rename": "^1.2.0",
-    "gulp-util": "^2.2.14",
-    "bower": "^1.3.6"
+  "version": "0.0.1",
+  "description": "Мой блог",
+  "main": "gulpfile.js",
+  "directories": {
+    "doc": "docs"
   },
+  "dependencies": {
+    "bower": "^1.3.6",
+    "gulp": "^3.8.5",
+    "gulp-concat": "^2.2.0",
+    "gulp-minify-css": "^0.3.6",
+    "gulp-rename": "^1.2.0",
+    "gulp-uglify": "^0.2.1",
+    "gulp-util": "^2.2.19"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/ovr/ovr.github.io.git"
-  },
   "author": "",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ovr/ovr.github.io/issues"
-  },
-  "homepage": "https://github.com/ovr/ovr.github.io"
+  "license": "MIT"
 }
