@@ -2,9 +2,9 @@ My Blog
 =======
 Nice to meet you here.
 
-Bug in articles or new future request
+Bug in articles or new feature request
 -------------------------------------
-If you detect any typo, bug or error you can open pull request with commit (fix).
+If you detect any typo, bug or error you can open pull request with commit(s) (fix).
 
 License
 -------
