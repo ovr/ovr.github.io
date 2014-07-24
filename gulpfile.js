@@ -18,16 +18,4 @@ gulp.task('stylesheets', function () {
     .pipe(gulp.dest('./public/dist/'))
 });
 
-/**
-gulp.task('scripts', function () {
-    gulp.src([
-        './public/src/vendor/modernizr/modernizr.js'
-    ])
-    .pipe(concat('all.js'))
-    .pipe(gulp.dest('dist'))
-    .pipe(rename('all.min.js'))
-    .pipe(uglify())
-    .pipe(gulp.dest('./dist/'))
-});*/
-
 gulp.task('default', ['stylesheets']);
