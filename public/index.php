@@ -3,9 +3,6 @@
  * @author: Patsura Dmitry <zaets28rus@gmail.com>
  */
 
-ini_set('display_errors', 1);
-error_reporting(-1);
-
 include_once __DIR__ . '/../vendor/autoload.php';
 include_once __DIR__ . '/../library/Twig/Extension.php';
 
