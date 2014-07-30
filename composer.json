@@ -6,11 +6,17 @@
             "email": "zaets28rus@gmail.com"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "library/"
+        }
+    },
     "require": {
         "zendframework/zend-debug": "*",
         "zendframework/zend-escaper": "*",
         "zendframework/zend-feed": "*",
         "zendframework/zend-servicemanager": "*",
+        "symfony/console": "*",
         "nikic/fast-route": "*",
         "twig/twig": "1.*",
         "twig/extensions": "1.*"
