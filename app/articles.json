@@ -1,5 +1,29 @@
 [
     {
+        "title": "128 дней на github и мои итоги",
+        "name": "128-days-opensource",
+        "intro_text_start_html_line": 0,
+        "intro_text_end_html_line": 2,
+        "tags": [],
+        "comments": true,
+        "id": 8,
+        "dateCreated": "2014-07-01 16:09:00",
+        "dateModified": "2014-07-01 16:09:00",
+        "published": false
+    },
+    {
+        "title": "Обзор инструментов Web программиста на Frontend",
+        "name": "web-developer-frontend-tools",
+        "intro_text_start_html_line": 0,
+        "intro_text_end_html_line": 2,
+        "tags": ["программирование", "bower", "jquery", "backbone", "npm"],
+        "comments": true,
+        "id": 7,
+        "dateCreated": "2014-07-01 16:09:00",
+        "dateModified": "2014-07-01 16:09:00",
+        "published": false
+    },
+    {
         "title": "Улучшаем навыки программирования",
         "name": "improve_your_skills_every_day",
         "intro_text_start_html_line": 0,
