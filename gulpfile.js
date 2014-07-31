@@ -14,7 +14,7 @@ gulp.task('stylesheets', function () {
         './public/css/component.css'
     ])
     .pipe(concat('all.css'))
-    .pipe(minifyCSS({removeEmpty: true}))
+    .pipe(minifyCSS({removeEmpty: true, keepSpecialComments: 0}))
     .pipe(gulp.dest('./public/dist/'))
 });
 
