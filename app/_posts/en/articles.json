@@ -12,11 +12,11 @@
         "published": false
     },
     {
-        "title": "Start english version of my blog",
-        "name": "start-english-blog-version",
+        "title": "How to compile dev build of Phalcon?",
+        "name": "how_to_compile_phalcon",
         "intro_text_start_html_line": 0,
         "intro_text_end_html_line": 2,
-        "tags": ["myblog"],
+        "tags": ["phalcon", "php", "php-dev", "c"],
         "comments": true,
         "id": 1,
         "dateCreated": "2014-05-24 23:10:00",
@@ -24,11 +24,11 @@
         "published": true
     },
     {
-        "title": "How to compile dev build of Phalcon?",
-        "name": "how_to_compile_phalcon",
+        "title": "Start english version of my blog",
+        "name": "start-english-blog-version",
         "intro_text_start_html_line": 0,
         "intro_text_end_html_line": 2,
-        "tags": ["phalcon", "php", "php-dev", "c"],
+        "tags": ["myblog"],
         "comments": true,
         "id": 1,
         "dateCreated": "2014-05-24 23:10:00",
