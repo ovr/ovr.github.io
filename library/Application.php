@@ -44,7 +44,9 @@ class Application {
         $this->twig->addExtension(new \App\Twig\Extension());
         $this->twig->addExtension(new \Twig_Extensions_Extension_I18n());
 
-        $this->currentLanguage = $this->getBestLanguage();
+        if (is_null($this->currentLanguage)) {
+            $this->currentLanguage = $this->getBestLanguage();
+        }
 
         return $this;
     }
@@ -148,5 +150,15 @@ class Application {
                 }
                 break;
         }
+    }
+
+    /**
+     * @param mixed $currentLanguage
+     */
+    public function setCurrentLanguage($currentLanguage)
+    {
+        $this->currentLanguage = $currentLanguage;
+
+        return $this;
     }
 }
