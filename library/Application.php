@@ -48,6 +48,17 @@ class Application {
             $this->currentLanguage = $this->getBestLanguage();
         }
 
+        $locales = array(
+            'ru' => 'ru_RU',
+            'en' => 'en_US'
+        );
+        $locale = $locales[$this->currentLanguage];
+
+        setlocale(LC_ALL, $locale.'.utf8');
+        bind_textdomain_codeset('default', 'UTF-8');
+        bindtextdomain('default', $this->getDir() . '/locale');
+        textdomain('default');
+
         return $this;
     }
 
@@ -160,5 +171,21 @@ class Application {
         $this->currentLanguage = $currentLanguage;
 
         return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCurrentLanguage()
+    {
+        return $this->currentLanguage;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDir()
+    {
+        return $this->dir;
     }
 }

@@ -1,0 +1,17 @@
+msgid "Будь с нами"
+msgstr "Be with us"
+
+msgid "Подписка"
+msgstr "Subscription"
+
+msgid "Отправить"
+msgstr "Submit"
+
+msgid "Пацура Дмитрий"
+msgstr "Patsura Dmitry"
+
+msgid "Web-Backend Разработчик"
+msgstr "Web-Backend Developer"
+
+msgid "Обо мне"
+msgstr "About me"
