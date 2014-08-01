@@ -46,6 +46,9 @@ class Application {
 
         if (is_null($this->currentLanguage)) {
             $this->currentLanguage = $this->getBestLanguage();
+            if ($this->currentLanguage == 'en' && $_SERVER['SERVER_NAME'] != 'en.dmtry.me') {
+                header('Location: http://en.dmtry.me/');
+            }
         }
 
         $locales = array(
