@@ -18,3 +18,7 @@ msgstr "About me"
 
 msgid "Статьи"
 msgstr "Articles"
+
+msgid "English Version"
+msgstr "Русская Версия"
+

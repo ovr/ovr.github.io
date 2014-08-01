@@ -70,12 +70,17 @@ class Application {
         'en' => 1
     );
 
+    private $config;
     /**
      * @return array
      */
     public function getConfig()
     {
-        return include_once $this->dir . '/config/config.php';
+        if (is_null($this->config)) {
+            return $this->config = include_once $this->dir . '/config/config.php';
+        }
+
+        return $this->config;
     }
 
     public function getBestLanguage()
@@ -175,7 +180,11 @@ class Application {
                             $intro_text = file($this->dir . '/data/cache/'. $this->currentLanguage . '/' .$article->name.'.html');
                             $articles[$key]->intro_text = implode('', array_slice($intro_text, $article->intro_text_start_html_line, $article->intro_text_end_html_line-$article->intro_text_start_html_line));
                         }
-                        echo $this->twig->render('index.twig', array('articles' => $articles));
+
+                        echo $this->twig->render('index.twig', array(
+                            'articles' => $articles,
+                            'language' => $this->currentLanguage,
+                            'languageChangeUrl' => $this->currentLanguage == 'ru' ? '//en.'.($this->getConfig()['domain']).'/' : '//'.$this->getConfig()['domain'].'/'));
                         break;
                     case 'about':
                         echo $this->twig->render('about.twig');
