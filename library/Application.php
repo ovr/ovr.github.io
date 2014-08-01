@@ -65,9 +65,28 @@ class Application {
         return $this;
     }
 
+    private $supportLanguages = array(
+        'ru' => 1,
+        'en' => 1
+    );
+
+    /**
+     * @return array
+     */
+    public function getConfig()
+    {
+        return include_once $this->dir . '/config/config.php';
+    }
+
     public function getBestLanguage()
     {
         $langs = array();
+
+        if (isset($_COOKIE['language'])) {
+            $lang = $_COOKIE['language'];
+        } else {
+            $lang = false;
+        }
 
         if (isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
             // break up string into pieces (languages and q factors)
@@ -87,18 +106,18 @@ class Application {
             }
         }
 
-        $supportLanguages = array(
-            'ru' => 1,
-            'en' => 1
-        );
-
         foreach ($langs as $lang => $val) {
             if (isset($supportLanguages[$lang])) {
-                return $lang;
+                $language = $lang;
+                break;
             }
         }
 
-        return 'ru';
+        $language = 'ru';
+
+        setcookie('language', $language, time()+60*24*365, '/', '.' . $this->getConfig()['domain'], false, false);
+
+        return $language;
     }
 
     private function getArticles()
