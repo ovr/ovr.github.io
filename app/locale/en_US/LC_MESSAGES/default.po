@@ -15,3 +15,6 @@ msgstr "Web-Backend Developer"
 
 msgid "Обо мне"
 msgstr "About me"
+
+msgid "Статьи"
+msgstr "Articles"
