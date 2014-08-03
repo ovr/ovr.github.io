@@ -2,7 +2,13 @@
 
 {% block title %}{{ article.title }}{% endblock %}
 {% block leftHeaderLinks %}
-	<li><a href="/" class="codrops-icon fa-2x pull-left">Статьи</a></li>
+	<li>
+		<a href="/" class="codrops-icon fa-2x pull-left">
+			{% trans %}
+			Статьи
+			{% endtrans %}
+		</a>
+	</li>
 {% endblock %}
 {% block meta %}
 	<meta property="og:title" content="{{ article.title }}"/>
