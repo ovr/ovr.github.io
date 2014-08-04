@@ -1,15 +1,15 @@
 [
     {
-        "title": "Only open source in my brain or 128 days working on github",
+        "title": "Open source for me or 128 days on Github",
         "name": "128-days-opensource",
         "intro_text_start_html_line": 0,
         "intro_text_end_html_line": 2,
         "tags": [],
         "comments": true,
-        "id": 3,
-        "dateCreated": "2014-07-01 16:09:00",
-        "dateModified": "2014-07-01 16:09:00",
-        "published": false
+        "id": 1,
+        "dateCreated": "2014-07-08 16:01:25",
+        "dateModified": "2014-07-08 16:01:25",
+        "published": true
     },
     {
         "title": "How to compile dev build of Phalcon?",
