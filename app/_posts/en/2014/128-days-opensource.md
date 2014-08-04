@@ -4,11 +4,11 @@ As has become clear from a title of the article, my current "open source commit 
 
 #Something about Zephir
 
-Because most of all my projects or commits is related with Zephir i will start speaking about it first.
+Because most of all my projects or commits is related to Zephir I will start speaking about it first.
 It's amazing that language grows every day, and it takes good feedback.
 [New open source projects](https://github.com/trending?l=zephir) gives popularity to Zephir.
 
-##0.4.3 Alpha Relase
+##0.4.3 Alpha Release
 
 We released a new branch - 0.4.3, new futures and fixes:
 
@@ -72,7 +72,7 @@ For example after this changes you can change compiler from gcc to llvm-gcc. Aft
 ##Lynx
 
 Some moth ago I decided something about that I need to build new project because all ORMs what I used is slower and bigger.
-The decision was immediate to make new project, where I will merge philosophy Of Doctrine 2, my experience and Zephir language.
+The decision was immediate to make new project, where I will implement philosophy Of Doctrine 2, my experience and Zephir language.
 
 [Project page](http://lynx.github.io/lynx/)
 
@@ -80,11 +80,11 @@ The decision was immediate to make new project, where I will merge philosophy Of
 
 #Phalcon
 
-In the Phalcon 2.0 version i create some pull requests to fix buld for PHP 5.6 support.
+In the Phalcon 2 I fixed build for PHP 5.6 support and sometimes ask on issues.
 
 ##Phalcon skeleton
 
-It's a new project and now i am planing architecture and future goals.
+It's a new project and now I am planing architecture and future goals.
 But is I fell the general idea of the project is "build Phalcon application with predefined modules in easy way".
 
 Для начало я хочу реализовать набор модулей:
@@ -106,19 +106,14 @@ After BETA release i will create new branch with Lynx support.
 #129 Day
 
 Yesterday I saw new [twit](https://twitter.com/phalconphp/status/495254816621600768) from [Rushmore Mushambi](https://github.com/rushmorem) about his realization of [zephir-compiler](https://github.com/rushmorem/zephir-compiler) realtime build system on bash.
-The decision was immediate and I after spending 40 minutes on work, I released watch command with [React](https://github.com/reactphp/react) component.
+The decision was immediate and I after spending 40 minutes on work, I released `watch command` with [React](https://github.com/reactphp/react) component.
 With this feature compilation process doesn't take time on core bootstrapping, and next time we can create support for partial build. (build only files what we need)
 
 See future request [Watch command #472](https://github.com/phalcon/zephir/pull/472)
 
 #Zephir Conflicts
 
-I stopped to contribute Zephir for some reasons:
-
-- http://gyazo.com/a33faf12652adf6f50287cca94b61204
-- Some gay push to master what he wants
-- Merge commits in master branch
-- No communication in team
+I decided to stop contributing Zephir because I have got a lot of conflicts with Zephir's authors.
 
 #My Blog development
 
@@ -134,4 +129,4 @@ If you anyone want to help me with translation or corrections you can contact wi
 
 If you want to see new articles or projects, please follow or start my project. (i will be happy)
 
-Will see you soon and now say you : "Happy Coding with Phalcon and Zephir".
+Will see you soon and I talk to you : "Happy Coding with Phalcon and Zephir".
