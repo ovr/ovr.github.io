@@ -1,4 +1,4 @@
-As has become clear from a title of the article, my current "open source commit streak" came up to the mark of 128 days and write article about it.
+As has become clear from a title of the article, my current open source commit streak came up to `128 days` and write article about it.
 
 ![My open source activity](http://dmtry.me/img/articles/2014/IJt3eL5acME.jpg)
 
