@@ -1,6 +1,6 @@
 [
     {
-        "title": "128 days working on github",
+        "title": "Only open source in my brain or 128 days working on github",
         "name": "128-days-opensource",
         "intro_text_start_html_line": 0,
         "intro_text_end_html_line": 2,
@@ -21,7 +21,7 @@
         "id": 1,
         "dateCreated": "2014-05-24 23:10:00",
         "dateModified": "2014-05-24 23:10:00",
-        "published": true
+        "published": false
     },
     {
         "title": "Start english version of my blog",
@@ -33,6 +33,6 @@
         "id": 1,
         "dateCreated": "2014-05-24 23:10:00",
         "dateModified": "2014-05-24 23:10:00",
-        "published": true
+        "published": false
     }
 ]
