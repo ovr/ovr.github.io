@@ -1,5 +1,7 @@
 As has become clear from a title of the article, my current "open source commit streak" came up to the mark of 128 days and write article about it.
 
+![My open source activity](http://dmtry.me/img/articles/2014/IJt3eL5acME.jpg)
+
 #Something about Zephir
 
 Because most of all my projects or commits is related with Zephir i will start speaking about it first.
@@ -113,11 +115,10 @@ See future request [Watch command #472](https://github.com/phalcon/zephir/pull/4
 
 I stopped to contribute Zephir for some reasons:
 
-1 http://gyazo.com/a33faf12652adf6f50287cca94b61204
-2 Some gay push to master what he wants
-3 Merge commits in master branch
-4 No communication in team
-
+- http://gyazo.com/a33faf12652adf6f50287cca94b61204
+- Some gay push to master what he wants
+- Merge commits in master branch
+- No communication in team
 
 #My Blog development
 
