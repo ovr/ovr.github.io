@@ -165,7 +165,8 @@ class Application {
                         $article->og_description = strip_tags($article->intro_text);
                         echo $this->twig->render('article.twig', array(
                             'article' => $article,
-                            'article_html' => file_get_contents($this->dir . '/data/cache/'. $this->currentLanguage . '/' .$article->name.'.html')
+                            'article_html' => file_get_contents($this->dir . '/data/cache/'. $this->currentLanguage . '/' .$article->name.'.html'),
+                            'languageChangeUrl' => $this->currentLanguage == 'ru' ? '//en.'.($this->getConfig()['domain']).'/' : '//'.$this->getConfig()['domain'].'/'
                         ));
                         break;
                     case 'default':
