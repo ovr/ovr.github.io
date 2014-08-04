@@ -116,6 +116,7 @@ I stopped to contribute Zephir for some reasons:
 1 http://gyazo.com/a33faf12652adf6f50287cca94b61204
 2 Some gay push to master what he wants
 3 Merge commits in master branch
+4 No communication in team
 
 
 #My Blog development
