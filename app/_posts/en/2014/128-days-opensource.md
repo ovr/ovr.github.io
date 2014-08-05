@@ -1,4 +1,4 @@
-As has become clear from a title of the article, my current open source commit streak came up to `128 days` and write article about it.
+As has become clear from this title of the article, my current open source commits streak came up to `128 days` and I write article about it.
 
 ![My open source activity](http://dmtry.me/img/articles/2014/IJt3eL5acME.jpg)
 
@@ -12,7 +12,7 @@ It's amazing that language grows every day, and it takes good feedback.
 
 We released a new branch - 0.4.3, new futures and fixes:
 
--	Fixed variables initialisation in conditions [#413](https://github.com/phalcon/zephir/issues/413)
+-	Fixed variables initialization in conditions [#413](https://github.com/phalcon/zephir/issues/413)
 -	Stubs generating fixes [#418](https://github.com/phalcon/zephir/issues/418), [#421](https://github.com/phalcon/zephir/issues/421), [#434](https://github.com/phalcon/zephir/issues/434)
 -	Fixed is_numeric function call
 -	Fixed internal CS errors [#416](https://github.com/phalcon/zephir/issues/416)
@@ -33,7 +33,7 @@ Thanks for help: [@phalcon](https://github.com/phalcon/), [@nkt](https://github.
 - [Fix declarations for objects](https://github.com/phalcon/zephir/issues/459)
 - [Remove auto generated part from kernel component](https://github.com/phalcon/zephir/pull/469)
 
-Will see more details nex time.
+Will see more details next time.
 
 ##My plans for Zephir 0.5
 
@@ -47,7 +47,7 @@ Components:
 
 - Zephir\Core
 - Zephir\Parser
-- Zephir\Kernel (библиотека расширяющая возможности ядра Zend)
+- Zephir\Kernel (wrapper for Zend Engine with extended functions)
 - Zephir\CodePrinter
 
 After splitting components we can create new ways, for example:
@@ -64,8 +64,8 @@ This is a priority task to standardize parsing components.
 
 ###Support for another compilers intro core (not only gcc)
 
-Some moments in core component is staticly but I added opportunity to change compiler in ```config.json```.
-For example after this changes you can change compiler from gcc to llvm-gcc. After it you get JIT by LLVM technology.
+Some moments in core component is static but I added opportunity to change compiler in ```config.json```.
+For example after these changes you can change compiler from gcc to llvm-gcc. After it you get JIT by LLVM technology.
 
 [Github branch](https://github.com/ovr/zephir/tree/0.5-dev)
 
@@ -86,8 +86,6 @@ In the Phalcon 2 I fixed build for PHP 5.6 support and sometimes ask on issues.
 
 It's a new project and now I am planing architecture and future goals.
 But is I fell the general idea of the project is "build Phalcon application with predefined modules in easy way".
-
-Для начало я хочу реализовать набор модулей:
 
 First I'll implement:
 
@@ -118,15 +116,15 @@ I decided to stop contributing Zephir because I have got a lot of conflicts with
 #My Blog development
 
 I created english version of my blog.
-As you can see All my articles is about technical and it is realy hard to write it becase It takes up 5 hour for one article.
-If you anyone want to help me with translation or corrections you can contact with me by easy way for you.
+As you can see All my articles is about technical and it's really hard to write it because It takes up 5 hours for one article.
+If you anyone wants to help me with translation or corrections you can contact with me by easy way for you.
 
-##Upcomming articles (with planned date)
+##Upcoming articles (with planned date)
 
 - How to set up own dns server (10 August)
 - Zephir vs PHP-CPP (20 Aug)
 - Screencasts about how to build the fastest application using the fastest Phalcon framework (1 September)
 
-If you want to see new articles or projects, please follow or start my project. (i will be happy)
+If you want to see my new articles or projects, please follow me or start my project. (i will be happy)
 
 Will see you soon and I talk to you : "Happy Coding with Phalcon and Zephir".
