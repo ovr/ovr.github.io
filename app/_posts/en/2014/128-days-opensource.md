@@ -12,7 +12,7 @@ It's amazing that language grows every day, and it takes good feedback.
 
 We released a new branch - 0.4.3, new futures and fixes:
 
--	Fixed variables initialization in conditions [#413](https://github.com/phalcon/zephir/issues/413)
+-	Fixed variables initialization 	in conditions [#413](https://github.com/phalcon/zephir/issues/413)
 -	Stubs generating fixes [#418](https://github.com/phalcon/zephir/issues/418), [#421](https://github.com/phalcon/zephir/issues/421), [#434](https://github.com/phalcon/zephir/issues/434)
 -	Fixed is_numeric function call
 -	Fixed internal CS errors [#416](https://github.com/phalcon/zephir/issues/416)
