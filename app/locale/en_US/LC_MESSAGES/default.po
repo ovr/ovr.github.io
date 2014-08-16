@@ -22,3 +22,26 @@ msgstr "Articles"
 msgid "English Version"
 msgstr "Русская Версия"
 
+msgid "Всем привет :)"
+msgstr "Hi everyone :)"
+
+msgid "Последений год я активно занимался разработкой языка Zephir и вещами связанными с Phalcon."
+msgstr "Last year I worked on contributing Zephir language and Phalcon framework."
+
+msgid "Я вдохновлен идей open source проектов и это главная причина которая вдохновляет меня на разработку."
+msgstr "So I love open source projects and It's my main reason for programming and contributing project on Github."
+
+msgid "Так сложилось что я начал заниматься веб программирование с конца 9 класса и сейчас за моими плечами более 4 лет программирование преимущественно в backend."
+msgstr "I started to programming after 9 class in the school, and today I have got four years experience in web development (most of all php backend)."
+
+msgid "Сейчас мне %ages% лет и я изучаю програмирование в"
+msgstr "I am %ages% years old and study computer science in"
+
+msgid "10 Мая 2014 я решил что мне стоит завести блог и начать освещать узко профилированные темы касающиеся: Phalcon, Zephir а так же не забывать про PHP, C++ и мир Web разработки."
+msgstr "In th 10 May, 2014 I decided that I will start my personal blog. In this blog I write articles about: Phalcon, Zephir, PHP, C++ and Web technologies."
+
+msgid "Если вы заинтересовались вовлечением меня в разработку проекта или предложить идею совместного стартапа, Вы можете связаться со мной удобным для вас способом (информация для связи находиться внизу страницы)."
+msgstr "If you would like to to invite for a job, project or startup you can find my contacts at the bottom of the page."
+
+msgid "Ну если у вас возникли проблемы то всегда пожалуйста"
+msgstr "If you have got any problems you can send mail to"
