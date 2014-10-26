@@ -13,10 +13,13 @@ class Github
 
     protected $password;
 
-    public function __construct($username, $password)
+    protected $token;
+
+    public function __construct($username, $password, $token)
     {
         $this->username = $username;
         $this->password = $password;
+        $this->token = $token;
     }
 
     public function getRenderedHTML($value)
@@ -30,7 +33,7 @@ class Github
         //Build headers
         $headers = array("Content-type: application/json", "User-Agent: curl");
         $encoded = base64_encode($this->username . ':' . $this->password);
-        $headers[] = "Authorization: Basic $encoded";
+        $headers[] = "x-oauth-basic: {$this->token}";
 
         //Build curl request to github's api
         $curl = curl_init('https://api.github.com/markdown');

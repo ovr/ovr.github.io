@@ -33,7 +33,7 @@ class Markdown extends Command
         $output->writeln("Start generating markdown");
 
         $config = $this->getApplication()->getConfig();
-        $this->markdownGenerator = new \App\Markdown\Github($config['github']['username'], $config['github']['password']);
+        $this->markdownGenerator = new \App\Markdown\Github($config['github']['username'], $config['github']['password'], $config['github']['token']);
 
         $this->generateMarkDown('ru', $output);
         $this->generateMarkDown('en', $output);
