@@ -166,6 +166,7 @@ class Application {
                         echo $this->twig->render('article.twig', array(
                             'article' => $article,
                             'article_html' => file_get_contents($this->dir . '/data/cache/'. $this->currentLanguage . '/' .$article->name.'.html'),
+                            'currentLanguage' => $this->currentLanguage,
                             'languageChangeUrl' => $this->currentLanguage == 'ru' ? '//en.'.($this->getConfig()['domain']).'/' : '//'.$this->getConfig()['domain'].'/'
                         ));
                         break;
