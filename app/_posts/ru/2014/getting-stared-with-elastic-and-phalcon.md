@@ -101,6 +101,8 @@ $client = new \Elastica\Client($di->get('config')->elastica->toArray());
 return $client;
 ```
 
+
+
 # Выводы
 
 Elasticasearch это отличнейшая замена sphinxsearch, которую уже можно взять и использовать прямо сейчас :)
