@@ -1,14 +1,14 @@
-Каждый день, месяц появляеются новые инструменты для разработки. На протежении 4 лет я использовал sphinxsearch но на днях
-мне благодаря (@serebro)[https://github.com/serebro] мне пришлось познакомиться с elasticsearch.
+Каждый день, месяц появляеются новые инструменты для разработки. На протежении 4 лет я использовал sphinxsearch, но на днях,
+благодаря (@serebro)[https://github.com/serebro], мне пришлось познакомиться с elasticsearch.
 
 # Плюсы
 
-Я думаю само правильно начать с плюсов
+Я думаю, самое правильное, начать с плюсов:
 
 + Скорость
 + Плагины
-+ Простота настройки (вспоминая sphinx не могу не нарадываться)
-+ JSON так как протокол сделан поверх Http сервера
++ Простота настройки (вспоминая sphinx не могу не нарадоваться)
++ JSON, так как протокол сделан поверх http сервера
 + Кросплатформеность (написан на Java)
 + Realtime индексация
 + Облачность
@@ -20,7 +20,7 @@
 
 # Установка
 
-Установка elasticsearch не сложный процесс. Для начало нужно перейти по ссылке http://www.elasticsearch.org/overview/elkdownloads/
+Установка elasticsearch не сложный процесс. Для начала нужно перейти по ссылке http://www.elasticsearch.org/overview/elkdownloads/
 
 ## Ubuntu\Debian
 
@@ -41,17 +41,17 @@ sudo service elasticsearch start
 brew install elasticsearch
 ```
 
-Не забываем проверить сервер зайдя http://localhost:9200/.
+Не забываем проверить сервер зайдя на http://localhost:9200/.
 
 ## Плагины
 
-Elastic радует поддержкой много функциональных плагинов к нему.
+Elastic радует поддержкой многих функциональных плагинов к нему.
 
 Рекомендую еще рассширения (Postman)[https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm/related?hl=en] для браузеров на основе Chromium.
 
 # Добавление записей в индекс
 
-Для примера создадим индекс продуктов магазина site и добавим туда 3 продукта
+Для примера создадим индекс продуктов магазина site и добавим 3 продукта
 
 ```bash
 curl -XPUT 'http://localhost:9200/site/products/1' -d '
@@ -80,7 +80,7 @@ curl -XGET 'http://localhost:9200/site/products/_search?q=title:Super&pretty=tru
 
 # Клиенты в PHP
 
-Для того что бы использовать ElasticSearch в PHP нам нужно
+Для того что бы использовать ElasticSearch в PHP нам нужно:
 
 * PHP >= 5.3.3
 * Composer
@@ -103,4 +103,4 @@ return $client;
 
 # Выводы
 
-Elasticasearch это отличнейшая замена sphinxsearch которую уже можно взять и использовать прям сейчас :)
+Elasticasearch это отличнейшая замена sphinxsearch, которую уже можно взять и использовать прямо сейчас :)
