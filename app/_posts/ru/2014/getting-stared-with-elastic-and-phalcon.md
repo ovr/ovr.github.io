@@ -1,5 +1,5 @@
 Каждый день, месяц появляеются новые инструменты для разработки. На протежении 4 лет я использовал sphinxsearch но на днях
-мне благодаря @serebro мне пришлось познакомиться с elasticsearch.
+мне благодаря (@serebro)[https://github.com/serebro] мне пришлось познакомиться с elasticsearch.
 
 # Плюсы
 
@@ -81,6 +81,3 @@ curl -XGET 'http://localhost:9200/site/products/_search?q=title:Super&pretty=tru
 # А в Phalcon можно?
 
 # Выводы
-
-
-
