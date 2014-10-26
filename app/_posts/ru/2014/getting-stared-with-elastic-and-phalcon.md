@@ -16,13 +16,15 @@
 
 # Минусы
 
+Как таковых не нашел.
+
 # Установка
 
-Установка elastic не сложный процесс. Для начало нужно перейти по ссылке http://www.elasticsearch.org/overview/elkdownloads/
+Установка elasticsearch не сложный процесс. Для начало нужно перейти по ссылке http://www.elasticsearch.org/overview/elkdownloads/
 
 ## Ubuntu\Debian
 
-Если вы используете Debian style систему то процесс установки будет следующим
+Если вы используете Debian family систему то процесс установки будет следующим:
 
 ```bash
 cd /tmp
@@ -33,7 +35,7 @@ sudo service elasticsearch start
 
 ## Mac OS X
 
-Когда есть brew все просто
+Когда есть brew все просто:
 
 ```bash
 brew install elasticsearch
@@ -78,6 +80,27 @@ curl -XGET 'http://localhost:9200/site/products/_search?q=title:Super&pretty=tru
 
 # Клиенты в PHP
 
+Для того что бы использовать ElasticSearch в PHP нам нужно
+
+* PHP >= 5.3.3
+* Composer
+* Curl ext
+
+Зайдем в корень с проектом и установим понравившийся нам клиент
+
+```bash
+composer require elasticsearch/elasticsearch
+```
+
 # А в Phalcon можно?
 
+Для начало создадим наш сервис:
+
+```php
+$client = new \Elastica\Client($di->get('config')->elastica->toArray());
+return $client;
+```
+
 # Выводы
+
+Elasticasearch это отличнейшая замена sphinxsearch которую уже можно взять и использовать прям сейчас :)
