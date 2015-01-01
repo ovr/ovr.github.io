@@ -6,6 +6,12 @@ Bug in articles or new feature request
 -------------------------------------
 If you detect any typo, bug or error you can open pull request with commit(s) (fix).
 
+You can hire me
+---------------
+
+[Мое резюме](http://dmtry.me/about)
+[My resume](http://en.dmtry.me/about)
+
 License
 -------
 All php and js code is open-sourced software licensed under the MIT License. See the LICENSE file for more information.
