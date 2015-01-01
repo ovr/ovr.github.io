@@ -10,6 +10,7 @@ You can hire me
 ---------------
 
 [Мое резюме](http://dmtry.me/about)
+
 [My resume](http://en.dmtry.me/about)
 
 License
