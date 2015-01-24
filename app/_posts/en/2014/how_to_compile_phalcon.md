@@ -7,10 +7,9 @@ This paragraph is written for those who have never written, and did not get the 
 
 ### Compilation settings
 
-Этот этап присутствует только при работе с большими приложениями и в Phalcon он сведен к минимуму.
-Внутри php присутствует утилита для настройки компиляции, и называется она phpize, а также есть утилита php-config, которая может рассказать нам обо всех настройках в php.
+There are development utils for php: `php-config` and `phpize`. To configure default params for compilation, we need to use phpize.
 
-Для того что бы настроить компиляцию нашего расширения, нужно зайти в папку расширения и выполнить:
+In order to configure the compilation of our expansion, you need to open ext folder and execute `phpize`:
 
 ```bash
 cd ext
@@ -19,38 +18,38 @@ phpize
 
 After running this commands, will be prepared environment to compile PHP extension.
 
-А теперь нужно сконфигурировать флаги для компилятора и препроцессора (пример для production компиляции):
+Now you need to configure flags for the compiler and preprocessor (example for production env):
 
 ```
 ./configure CFLAGS="-O2 -finline-functions -fomit-frame-pointer -fvisibility=hidden"
 ```
 
-```-O2``` Она управляет включением уровня оптимизации. Существует семь видов настроек переменной ```-O```: ```-O0```, ```-O1```, ```-O2```, ```-O3```, ```-Os```, ```-Og```, и ```-Ofast```. Уровень O2 считают более оптимальным и принято за практику использовать его.
+```-O2``` Enable second level for optimizations. There are 7 levels for it: ```-O```: ```-O0```, ```-O1```, ```-O2```, ```-O3```, ```-Os```, ```-Og```, и ```-Ofast```. Level O2 is most popular and is enabled by default in most used apps.
 
-```-finline-functions``` [Оптимизация для функций](https://gcc.gnu.org/onlinedocs/gcc-4.9.0/gcc/Inline.html) с модификатором inline.
+```-finline-functions``` [functions optimization](https://gcc.gnu.org/onlinedocs/gcc-4.9.0/gcc/Inline.html) with inline modifier.
 
-```-fomit-frame-pointer``` [Отключения отображения указателя в регистре](https://gcc.gnu.org/onlinedocs/gcc-3.4.4/gcc/Optimize-Options.html), по умолчанию включена в уровне оптимизации ```-O```, ```-O2```, ```-O3```, ```-Os```.
+```-fomit-frame-pointer``` [disable frame pointers](https://gcc.gnu.org/onlinedocs/gcc-3.4.4/gcc/Optimize-Options.html), is enabled by default in ```-O```, ```-O2```, ```-O3```, ```-Os```.
 
-```-fvisibility``` Области видимости.
+```-fvisibility``` visible scopes.
 
-Пример конфигурации для разработчика или отладки:
+Example how to configure you env for development and debug process:
 
 ```
 ./configure CFLAGS="-g3 -O1 -fno-delete-null-pointer-checks -Wall -fvisibility=hidden"
 ```
 
-```-g3``` Включения debug среды для показа более подробной информации в gdb.
+```-g3``` enable debug messages for gdb.
 
-```-fno-delete-null-pointer-checks``` Проверка на указатели.
+```-fno-delete-null-pointer-checks``` pointers check.
 
-```-Wall``` Включения повышенного режима обнаружения ошибок.
+```-Wall``` Enable high error detection mode.
 
 ###Preprocessor
 
 Preprocessor — a computer program, принимающая данные на входе и выдающая данные, предназначенные для входа другой программы (например, компилятора). О данных на выходе препроцессора говорят, что они находятся в препроцессированной форме, пригодной для обработки последующими программами (компилятор). Результат и вид обработки зависят от вида препроцессора; так, некоторые препроцессоры могут только выполнить простую текстовую подстановку, другие способны по возможностям сравниться с языками программирования. Наиболее частый случай использования препроцессора — обработка исходного кода перед передачей его на следующий шаг компиляции. Языки программирования C/C++ и система компьютерной вёрстки TeX используют препроцессоры, значительно расширяющие их возможности.
-Данный текст я скопировал с википедии, но давайте возьмем пример. Я буду пользоваться компилятором g++.
+I will use `g++` compiler.
 
-Создадим файл example.cpp с содержанием
+Create file `example.cpp` with simple content:
 
 ```c++
 #include <cstdlib>
@@ -75,35 +74,35 @@ int main()
 }
 ```
 
-И запустим компилятор с флагом препроцессора
+And run the compiler with preprocessor flag:
 
 ```
 g++ -E example.cpp > output
 ```
 
 А теперь просмотрим файл output.
-Мы видим, что строки вида
+We see, that lines
 
 ```c++
 #include <cstdlib>
 #include <iostream>
 ```
 
-были заменены на контент данных файлов.
+was replaced by content from this files.
 
-В строке с cout MY_TEXT был заменен на 1.
+In line cout << MY_TEXT,  MY_TEXT was replace by 1.
 
 ```c++
 cout << 1 << endl;
 ```
 
-А вызов макроса в строке изменен на код самого макроса:
+And macros call was replaced by macros code.
 
 ```c++
 {cout << "1" << "1" << endl; cout << "b" << "b" << endl;};
 ```
 
-Это был небольшой пример работы препроцессора, в будущем обязательно вернусь к данной теме, но уже более подробно.
+It's a small example, to show how Preprocessor is working.
 
 ### Compiling and linking
 
