@@ -34,6 +34,7 @@
 		</div>
 		<div class="col-6 col-sm-4 col-lg-4">
 			<div class="widget HTML" id="HTML2">
+				<div class="github-card" data-user="ovr"></div>
 				<h2 class="title">
 					{% trans %}
 					Подписка
@@ -62,8 +63,6 @@
 				{% endtrans %}
 			</h2>
 
-			<script type="text/javascript" src="//vk.com/js/api/openapi.js?112"></script>
-
 			<div id="phalcon_vk" class="panel"></div>
 			<script type="text/javascript">
 				VK.Widgets.Group("phalcon_vk", {mode: 0, width: "auto", height: "250", color1: 'FFFFFF', color2: '2B587A', color3: '5B7FA6'}, 45934290);
@@ -75,5 +74,8 @@
 			</script>
 		</div>
 	</div>
+
+	<script src="http://lab.lepture.com/github-cards/widget.js"></script>
+	<script type="text/javascript" src="//vk.com/js/api/openapi.js?112"></script>
 
 {% endblock %}
