@@ -7,6 +7,9 @@ msgstr "Subscription"
 msgid "Отправить"
 msgstr "Submit"
 
+msgid "Читать далее"
+msgstr "Read more"
+
 msgid "Пацура Дмитрий"
 msgstr "Patsura Dmitry"
 

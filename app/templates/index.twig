@@ -24,7 +24,11 @@
 						{% endautoescape %}
 					</article>
 
-					<a class="btn btn-blog pull-right marginBottom10" href="/article/{{ article.name }}/">READ MORE</a>
+					<a class="btn btn-blog pull-right marginBottom10" href="/article/{{ article.name }}/">
+						{% trans %}
+						Читать далее
+						{% endtrans %}
+					</a>
 				</div>
 			{% endfor %}
 		</div>
