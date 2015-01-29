@@ -24,4 +24,5 @@ License
 -------
 
 All php and js code is open-sourced software licensed under the MIT License. See the [LICENSE](./public/LICENSE) file for more information.
-All posts in /app/_posts licensed under [Creative Commons Attribution 4.0 International](http://creativecommons.org/licenses/by/4.0/).
+
+All posts in `/app/_posts` licensed under [Creative Commons Attribution 4.0 International](http://creativecommons.org/licenses/by/4.0/).
