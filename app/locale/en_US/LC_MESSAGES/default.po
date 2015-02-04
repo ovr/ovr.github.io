@@ -22,6 +22,15 @@ msgstr "About me"
 msgid "Статьи"
 msgstr "Articles"
 
+msgid "Мои проекты"
+msgstr "My projects"
+
+msgid "Опыт работы"
+msgstr "Work experience"
+
+msgid "В каких open source проектах я участвую"
+msgstr "Open source what I contribute"
+
 msgid "English Version"
 msgstr "Русская Версия"
 
