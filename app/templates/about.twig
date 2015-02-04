@@ -2,220 +2,303 @@
 
 {% block content %}
 
-	<div class="page-header">
-		<h1 class="brand" style="color: #9c9c9c;">
-			{% trans %}
-			Пацура Дмитрий
-			{% endtrans %}
-			<small style="color: #99c356;">
-				{% trans %}
-				Web-Backend Разработчик
-				{% endtrans %}
-			</small>
-		</h1>
-		<p>
-			{% set ages = dmitry_ages() %}
-			{% trans %}
-			Сейчас мне {{ ages }} лет и я изучаю програмирование в
-			{% endtrans %}
-			<a href="http://bgpu.ru?dmtry.me" target="_blank">{% trans %}Blagoveshensk University{% endtrans %}</a>.
-		</p>
-	</div>
-	<div class="row">
-		<div class="col-lg-6 col-md-12">
-			<img src="/img/572096.jpg">
-		</div>
-		<div class="col-lg-6 col-md-12">
-			<p>
-				{% trans %}
-				Всем привет :)
-				{% endtrans %}
-				{% trans %}
-				Так сложилось что я начал заниматься веб программирование с конца 9 класса и сейчас за моими плечами более 4 лет программирование преимущественно в backend.
-				{% endtrans %}
-				{% trans %}
-				Я вдохновлен идей open source проектов и это главная причина которая вдохновляет меня на разработку.
-				{% endtrans %}
-				{% trans %}
-				Последений год я активно занимался разработкой языка Zephir и вещами связанными с Phalcon.
-				{% endtrans %}
-			</p>
-			<p>
-				{% trans %}
-				10 Мая 2014 я решил что мне стоит завести блог и начать освещать узко профилированные темы касающиеся: Phalcon, Zephir а так же не забывать про PHP, C++ и мир Web разработки.
-				{% endtrans %}
-			</p>
-			<p>
-				{% trans %}
-				Если вы заинтересовались вовлечением меня в разработку проекта или предложить идею совместного стартапа, Вы можете связаться со мной удобным для вас способом (информация для связи находиться внизу страницы).
-				{% endtrans %}
-			</p>
-			<iframe src="http://ghbtns.com/github-btn.html?user=ovr&type=follow&size=large" height="30" width="240" frameborder="0" scrolling="0" style="width:100%; height: 30px;" allowTransparency="true"></iframe>
-			<br />
-			<br />
-			<p>
-				{% trans %}
-				Ну если у вас возникли проблемы то всегда пожалуйста
-				{% endtrans %}
-				<a href="mailto:houston@dmtry.me">houston@dmtry.me</a>
-			</p>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-lg-6 col-md-12">
-			<h3>Programming Languages</h3>
-			<ul class="list-unstyled list-inline">
-				<li>PHP,</li>
-				<li>C/C++,</li>
-				<li>Javascript,</li>
-				<li>Zephir</li>
-			</ul>
-		</div>
-		<div class="col-lg-6 col-md-12">
-			<h3>Tools</h3>
-			<ul class="list-unstyled list-inline">
-				<li>PhpStorm,</li>
-				<li>Git,</li>
-				<li>HG (Mercurial),</li>
-				<li>PHPUnit,</li>
-				<li>Unix</li>
-			</ul>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-lg-6 col-md-12">
-			<h3>PHP Frameworks</h3>
-			<ul class="list-unstyled list-inline">
-				<li>Zend Framework 1 &amp; 2,</li>
-				<li>Phalcon PHP,</li>
-				<li>Symfony 2,</li>
-				<li>CakePHP</li>
-			</ul>
-		</div>
-		<div class="col-lg-6 col-md-12">
-			<h3>Frontend</h3>
-			<ul class="list-unstyled list-inline">
-				<li>JQuery,</li>
-				<li>Bootstrap,</li>
-				<li>Backbone,</li>
-				<li>Bower</li>
-				<li>NPM,</li>
-				<li>Gulp,</li>
-				<li>HTML/CSS</li>
-			</ul>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-lg-6 col-md-12">
-			<h3>Work experience</h3>
-			<div class="profile_info">
-				<div class="clear_fix profile_career_row">
-					<div class="label fl_l">Место работы:</div>
-					<div class="labeled fl_l"><a href="http://artlime.ru/">Lime Design Studio</a><br>Благовещенск, 2010–2010<br><a href="#php-backend">PHP Программист</a></div>
-				</div><div class="clear_fix profile_career_row block">
-					<div class="label fl_l">Место работы:</div>
-					<div class="labeled fl_l"><a href="http://amur.net/">Amur.net</a><br>Благовещенск, 2010–2011<br><a href="#php-backend">PHP программист</a></div>
-				</div><div class="clear_fix profile_career_row block">
-					<div class="label fl_l">Место работы:</div>
-					<div class="labeled fl_l"><a href="http://artlime.ru/">Lime Design Studio</a><br>Благовещенск, 2011–2011<br><a href="#php-backend">PHP Программист</a></div>
-				</div><div class="clear_fix profile_career_row block">
-					<div class="label fl_l">Место работы:</div>
-					<div class="labeled fl_l"><a href="http://uniqhand.ru/">Uniqhand.ru</a><br>Благовещенск, 2011–2014<br><a href="#php-backend">PHP Программист</a></div>
-				</div><div class="clear_fix profile_career_row block">
-					<div class="label fl_l">Место работы:</div>
-				</div>
-				<div class="labeled fl_l"><a href="http://en.wikipedia.org/wiki/Freelancer">Freelance</a><br>Благовещенск, 2014–2014<br><a href="#php-backend">Веб программист</a></div>
-			</div>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-lg-6 col-md-12">
-			<h3>Open source what I contribute</h3>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-lg-6 col-md-12">
-			<h2><a href="http://github.com/phalcon/zephir">Zephir</a></h2>
-			<p>
-				I am an active contributor in <a href="http://github.com/phalcon/zephir">zephir-language</a> project.
-				Zephir is a compiled high level language aimed to the creation of C-extensions for PHP http://zephir-lang.com/.
-			</p>
-		</div>
-		<div class="col-lg-6 col-md-12">
-			<h2><a href="http://github.com/phalcon/cphalcon">Phalcon</a></h2>
-			<p>
-				Last month start contributing. It is web framework delivered as a C-extension for PHP
-			</p>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-lg-6 col-md-12">
-			<h3>My open source projects</h3>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-lg-6 col-md-12">
-			<h2><a href="https://github.com/ovr/phalcony">Phalcony</a></h2>
-			<p>
-				Light lib to build beautiful applications with Phalcon.
-			</p>
-		</div>
-		<div class="col-lg-6 col-md-12">
-			<h2><a href="https://github.com/lynx/lynx">Lynx</a></h2>
-			<p>
-				The fastest ORM/DBAL project written on Zephir language for height performance.
-				Current version is pre alpha version.
-			</p>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-lg-6 col-md-12">
-			<h3>My instagram photos</h3>
-			<iframe src="http://widget.stagram.com/in/dmtry_ovr/?s=208&w=5&h=2&b=1&p=5" allowtransparency="true" frameborder="0" scrolling="no" style="border:none;overflow:hidden;width:1115px; height: 446px" ></iframe> <!-- websta - web.stagram.com -->
-		</div>
-	</div>
-	{#<div class="row">#}
-		{#<div class="col-lg-6 col-md-12">#}
-			{#<h3>Education</h3>#}
-			{#BGPU 2014-2017 Math, Programming profile#}
-		{#</div>#}
-	{#</div>#}
-	<div class="row top-buffer">
-		<div class="container">
-			<div class="well well-sm quick-contact">
-				<div class="row">
-					<div class="col-md-12">
-						<div class="row">
-							<div class="col-md-4">
-								<h1 class="title-contact">
-									Quick Contact
-								</h1>
-							</div>
-							<div class="col-md-4 contact-email">
-								<h2>zaets28rus@gmail.com</h2>
-								<h3>+7 962 283 78 83</h3>
-							</div>
-							<div class="col-md-4">
-								<div class="row contact row-first">
-									<div class="col-md-6">
-										<a href="skype:izaets28rus?chat" class="skype" target="_blank">
-											<i class="fa fa-skype"></i>izaets28rus
-										</a>
-									</div>
-								</div>
-								<div class="row contact">
-									<div class="col-md-6">
-										<a href="https://vk.com/ovr_web" class="linkedin" target="_blank">
-											<i class="fa fa-vk"></i>ВКонтакте
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+    <div class="page-header">
+        <h1 class="brand" style="color: #9c9c9c;">
+            {% trans %}
+            Пацура Дмитрий
+            {% endtrans %}
+            <small style="color: #99c356;">
+                {% trans %}
+                Web-Backend Разработчик
+                {% endtrans %}
+            </small>
+        </h1>
+        <p>
+            {% set ages = dmitry_ages() %}
+            {% trans %}
+            Сейчас мне {{ ages }} лет и я изучаю програмирование в
+            {% endtrans %}
+            <a href="http://bgpu.ru?dmtry.me" target="_blank">{% trans %}Blagoveshensk University{% endtrans %}</a>.
+        </p>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 col-md-12">
+            <img src="/img/572096.jpg">
+        </div>
+        <div class="col-lg-6 col-md-12">
+            <p>
+                {% trans %}
+                Всем привет :)
+                {% endtrans %}
+                {% trans %}
+                Так сложилось что я начал заниматься веб программирование с конца 9 класса и сейчас за моими плечами
+                более 4 лет программирование преимущественно в backend.
+                {% endtrans %}
+                {% trans %}
+                Я вдохновлен идей open source проектов и это главная причина которая вдохновляет меня на разработку.
+                {% endtrans %}
+                {% trans %}
+                Последений год я активно занимался разработкой языка Zephir и вещами связанными с Phalcon.
+                {% endtrans %}
+            </p>
+
+            <p>
+                {% trans %}
+                10 Мая 2014 я решил что мне стоит завести блог и начать освещать узко профилированные темы касающиеся:
+                Phalcon, Zephir а так же не забывать про PHP, C++ и мир Web разработки.
+                {% endtrans %}
+            </p>
+
+            <p>
+                {% trans %}
+                Если вы заинтересовались вовлечением меня в разработку проекта или предложить идею совместного стартапа,
+                Вы можете связаться со мной удобным для вас способом (информация для связи находиться внизу страницы).
+                {% endtrans %}
+            </p>
+            <iframe src="http://ghbtns.com/github-btn.html?user=ovr&type=follow&size=large" height="30" width="240"
+                    frameborder="0" scrolling="0" style="width:100%; height: 30px;" allowTransparency="true"></iframe>
+            <br/>
+            <br/>
+
+            <p>
+                {% trans %}
+                Ну если у вас возникли проблемы то всегда пожалуйста
+                {% endtrans %}
+                <a href="mailto:houston@dmtry.me">houston@dmtry.me</a>
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 col-md-12">
+            <h3>Programming Languages</h3>
+            <ul class="list-unstyled list-inline">
+                <li>PHP,</li>
+                <li>C/C++,</li>
+                <li>Javascript,</li>
+                <li>Zephir</li>
+            </ul>
+        </div>
+        <div class="col-lg-6 col-md-12">
+            <h3>Tools</h3>
+            <ul class="list-unstyled list-inline">
+                <li>PhpStorm,</li>
+                <li>Git,</li>
+                <li>HG (Mercurial),</li>
+                <li>PHPUnit,</li>
+                <li>Unix</li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 col-md-12">
+            <h3>PHP Frameworks</h3>
+            <ul class="list-unstyled list-inline">
+                <li>Zend Framework 1 &amp; 2,</li>
+                <li>Phalcon PHP,</li>
+                <li>Symfony 2,</li>
+                <li>CakePHP</li>
+            </ul>
+        </div>
+        <div class="col-lg-6 col-md-12">
+            <h3>Frontend</h3>
+            <ul class="list-unstyled list-inline">
+                <li>JQuery,</li>
+                <li>Bootstrap,</li>
+                <li>Backbone,</li>
+                <li>Bower</li>
+                <li>NPM,</li>
+                <li>Gulp,</li>
+                <li>HTML/CSS</li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 col-md-12">
+            <h3>
+                {% trans %}
+                Опыт работы
+                {% endtrans %}
+            </h3>
+
+            <div class="profile_info">
+                <div class="clear_fix profile_career_row block">
+                    <div class="label fl_l">Место работы:</div>
+                </div>
+                <div class="labeled fl_l">
+                    <a href="http://en.wikipedia.org/wiki/Freelancer" target="_blank">Freelance</a>
+                    <br>Благовещенск, 2014–2015<br>
+                    <a href="#php-backend">Веб программист</a>
+                </div>
+
+                <div class="clear_fix profile_career_row block">
+                    <div class="label fl_l">Место работы:</div>
+                    <div class="labeled fl_l">
+                        <a href="http://uniqhand.ru/" target="_blank">Uniqhand.ru</a>
+                        <br>Благовещенск, 2011–2014<br>
+                        <a href="#php-backend">PHP Программист</a></div>
+                </div>
+
+                <div class="clear_fix profile_career_row block">
+                    <div class="label fl_l">Место работы:</div>
+                    <div class="labeled fl_l">
+                        <a href="http://artlime.ru/" target="_blank">Lime Design Studio</a>
+                        <br>Благовещенск, 2011–2011<br>
+                        <a href="#php-backend">PHP Программист</a>
+                    </div>
+                </div>
+
+                <div class="clear_fix profile_career_row block">
+                    <div class="label fl_l">Место работы:</div>
+                    <div class="labeled fl_l">
+                        <a href="http://amur.net/" target="_blank">Amur.net</a>
+                        <br>Благовещенск, 2010–2011<br>
+                        <a href="#php-backend">PHP программист</a>
+                    </div>
+                </div>
+
+                <div class="clear_fix profile_career_row">
+                    <div class="label fl_l">Место работы:</div>
+                    <div class="labeled fl_l">
+                        <a href="http://artlime.ru/" target="_blank">Lime Design Studio</a>
+                        <br>Благовещенск, 2010–2010<br>
+                        <a href="#php-backend">PHP Программист</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 col-md-12">
+            <h3>
+                {% trans %}
+                В каких open source проектах я участвую
+                {% endtrans %}
+            </h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 col-md-12">
+            <h2>
+                <a href="http://github.com/phalcon/zephir" target="_blank">Zephir</a>
+            </h2>
+
+            <p>
+                I am an active contributor in <a href="http://github.com/phalcon/zephir" target="_blank">Zephir-language</a> project.
+                Zephir is a compiled high level language aimed to the creation of C-extensions for PHP <a href="http://zephir-lang.com/" target="_blank">http://zephir-lang.com/</a>.
+            </p>
+        </div>
+        <div class="col-lg-6 col-md-12">
+            <h2>
+                <a href="http://github.com/phalcon/cphalcon" target="_blank">Phalcon</a>
+            </h2>
+
+            <p>
+                It is web framework delivered as a C-extension for PHP
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 col-md-12">
+            <h3>
+                {% trans %}
+                Мои проекты
+                {% endtrans %}
+            </h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 col-md-12">
+            <h2>
+                <a href="https://github.com/ovr/phalcon-module-skeleton" target="_blank">Phalcon module skeleton</a>
+            </h2>
+
+            <p>
+                Phalcon modules skeleton is an application template for building beauty applications on Phalcon framework.
+            </p>
+        </div>
+        <div class="col-lg-6 col-md-12">
+            <h2>
+                <a href="https://github.com/ovr/perfect-php-vagrant" target="_blank">Perfect PHP Vagrant</a>
+            </h2>
+
+            <p>
+                Web development Vagrant machine with PHP + Phalcon/Lynx/Zephir, Nginx, Node+Bower/Gulp/Grunt.
+            </p>
+        </div>
+
+        <div class="col-lg-6 col-md-12">
+            <h2>
+                <a href="https://github.com/ovr/phalcony" target="_blank">Phalcony</a>
+            </h2>
+
+            <p>
+                Light lib to build beautiful applications with Phalcon.
+            </p>
+        </div>
+        <div class="col-lg-6 col-md-12">
+            <h2>
+                <a href="https://github.com/lynx/lynx" target="_blank">Lynx</a>
+            </h2>
+
+            <p>
+                The fastest ORM/DBAL project written on Zephir language for height performance.
+            </p>
+        </div>
+    </div>
+
+
+    {#<div class="row">#}
+        {#<div class="col-lg-6 col-md-12">#}
+            {#<h3>My instagram photos</h3>#}
+            {#<iframe src="http://widget.stagram.com/in/dmtry_ovr/?s=208&w=5&h=2&b=1&p=5" allowtransparency="true"#}
+                    {#frameborder="0" scrolling="no"#}
+                    {#style="border:none;overflow:hidden;width:1115px; height: 446px"></iframe>#}
+        {#</div>#}
+    {#</div>#}
+
+    {#<div class="row">#}
+    {#<div class="col-lg-6 col-md-12">#}
+    {#<h3>Education</h3>#}
+    {#BGPU 2014-2017 Math, Programming profile#}
+    {#</div>#}
+    {#</div>#}
+    <div class="row top-buffer">
+        <div class="container">
+            <div class="well well-sm quick-contact">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h1 class="title-contact">
+                                    Quick Contact
+                                </h1>
+                            </div>
+                            <div class="col-md-4 contact-email">
+                                <h2>zaets28rus@gmail.com</h2>
+
+                                <h3>+7 962 283 78 83</h3>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="row contact row-first">
+                                    <div class="col-md-6">
+                                        <a href="skype:izaets28rus?chat" class="skype" target="_blank">
+                                            <i class="fa fa-skype"></i>izaets28rus
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="row contact">
+                                    <div class="col-md-6">
+                                        <a href="https://vk.com/ovr_web" class="linkedin" target="_blank">
+                                            <i class="fa fa-vk"></i>ВКонтакте
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 {% endblock %}
