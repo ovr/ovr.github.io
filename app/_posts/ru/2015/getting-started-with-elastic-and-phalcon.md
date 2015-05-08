@@ -56,19 +56,19 @@ Elastic радует поддержкой многих функциональн�
 ```bash
 curl -XPUT 'http://localhost:9200/site/products/1' -d '
 {
- "title"     : "Super product",
- "price": 12345.00
+    "title": "Super product",
+    "price": 12345.00
 }'
 curl -XPUT 'http://localhost:9200/site/products/2' -d '
 {
- "title"     : "Super product 1234",
- "price": 532.00
+    "title": "Super product 1234",
+    "price": 532.00
 }'
 curl -XPUT 'http://localhost:9200/site/products/3' -d '
 { 
- "id"   : "1",
- "title"     : "Super product fdsfs",
- "price": 631.00
+    "id": "1",
+    "title": "Super product fdsfs",
+    "price": 631.00
 }'
 ```
 
@@ -82,14 +82,57 @@ curl -XGET 'http://localhost:9200/site/products/_search?q=title:Super&pretty=tru
 
 Для того что бы использовать ElasticSearch в PHP нам нужно:
 
-* PHP >= 5.3.3
+* PHP >= 5.3.9
 * Composer
 * Curl ext
 
-Зайдем в корень с проектом и установим понравившийся нам клиент
+Зайдем в корень с проектом и установим понравившийся нам клиент, мой выбор это
 
 ```bash
 composer require elasticsearch/elasticsearch
+```
+
+## Пример использование
+
+После установки библиотеке создадим клиент:
+
+```
+<?php
+require 'vendor/autoload.php';
+
+$client = new Elasticsearch\Client();
+```
+
+### Добавление документа
+
+```php
+$params = array();
+$params['body']  = array('testField' => 'abc');
+$params['index'] = 'my_index';
+$params['type']  = 'my_type';
+$params['id']    = 'my_id';
+$ret = $client->index($params);
+```
+
+### Получение документа
+
+```php
+$getParams = array();
+$getParams['index'] = 'my_index';
+$getParams['type']  = 'my_type';
+$getParams['id']    = 'my_id';
+$retDoc = $client->get($getParams);
+```
+
+### Поиск документа
+
+```php
+$updateParams['index']          = 'my_index';
+$updateParams['type']           = 'my_type';
+$updateParams['id']             = 'my_id';
+$updateParams['body']['doc']    = array('my_key' => 'new_value');
+
+$retUpdate = $client->update($updateParams);
 ```
 
 # А в Phalcon можно?
@@ -101,8 +144,8 @@ $client = new \Elastica\Client($di->get('config')->elastica->toArray());
 return $client;
 ```
 
-
+Хорошим примером работы с `ElasticSearch` будет проект [http://phalconist.com/](https://github.com/phalconist/phalconist).
 
 # Выводы
 
-Elasticasearch это отличнейшая замена sphinxsearch, которую уже можно взять и использовать прямо сейчас :) Выбор за тобой :3
+`Elasticasearch` - это отличнейшая замена `Sphinxsearch`, которую уже можно взять и использовать прямо сейчас :) Выбор за тобой :3
