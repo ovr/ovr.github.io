@@ -132,27 +132,22 @@ require 'vendor/autoload.php';
 $client = new \Elastica\Client();
 ```
 
-### Добавление документа (пример Twit)
+### Добавление документа
 
 ```php
 $id = 1;
 
-$tweet = array(
+$product = array(
     'id'      => $id,
-    'user'    => array(
-        'name'      => 'mewantcookie',
-        'fullName'  => 'Cookie Monster'
-    ),
-    'msg'     => 'Me wish there were expression for cookies like there is for apples. "A cookie a day make the doctor diagnose you with diabetes" not catchy.',
-    'tstamp'  => '1238081389',
-    'location'=> '41.12,-71.34',
+    'title'   => 'test product',
+    'price'   => 12345.00,
     '_boost'  => 1.0
 );
 
-$tweetDocument = new \Elastica\Document($id, $tweet);
+$productDocument = new \Elastica\Document($id, $product);
 
-// Добавление твита в тип
-$elasticaType->addDocument($tweetDocument);
+// Добавление продукта
+$elasticaType->addDocument($productDocument);
 
 // Обновление индекса
 $elasticaType->getIndex()->refresh();
@@ -180,7 +175,7 @@ var_dump($search->count()); // Кол-во элементов по запрос�
 $resultSet = $search->search();
 
 foreach ($search->scanAndScroll() as $scrollId => $resultSet) {
-    // ... handle Elastica\ResultSet
+    // ...
 }
 ```
 
