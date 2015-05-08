@@ -1,5 +1,17 @@
 [
     {
+      "title": "SphinxSearch пока, привет Elastic & Phalcon",
+      "name": "getting-started-with-elastic-and-phalcon",
+      "intro_text_start_html_line": 0,
+      "intro_text_end_html_line": 2,
+      "tags": [],
+      "comments": true,
+      "id": 9,
+      "dateCreated": "2014-05-08 22:13:25",
+      "dateModified": "2014-05-08 22:13:25",
+      "published": true
+    },
+    {
         "title": "Open source головного мозга или 128 дней на Github",
         "name": "128-days-opensource",
         "intro_text_start_html_line": 0,
