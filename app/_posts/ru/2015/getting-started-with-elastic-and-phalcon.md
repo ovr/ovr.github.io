@@ -1,5 +1,5 @@
-Каждый день, месяц появляеются новые инструменты для разработки. На протежении 4 лет я использовал `sphinxsearch`, но на днях,
-благодаря (@serebro)[https://github.com/serebro], мне пришлось познакомиться с `elasticsearch`.
+Каждый день, месяц появляеются новые инструменты для разработки. На протежении 4 лет я использовал `SphinxSearch`, но на днях,
+благодаря [Сергею@serebro](https://github.com/serebro), мне пришлось познакомиться с `Elasticsearch`.
 
 # Плюсы
 
@@ -20,7 +20,7 @@
 
 # Установка
 
-Установка `elasticsearch` не сложный процесс. Для начала нужно перейти по ссылке http://www.elasticsearch.org/overview/elkdownloads/
+Установка `ElasticSearch` не сложный процесс. Для начала нужно перейти по ссылке [http://www.elasticsearch.org/overview/elkdownloads/](http://www.elasticsearch.org/overview/elkdownloads/)
 
 ## Ubuntu\Debian
 
