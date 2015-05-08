@@ -63,6 +63,7 @@ curl -X GET http://localhost:9200/
 Самые популярные:
 
 [Kibana](https://github.com/elastic/kibana) - это админ панель для анализа аналитики и поиска.
+
 [Elasticsearch Gui](https://github.com/jettro/elasticsearch-gui) - это GUI написанный на AngularJS.
 
 Рекомендую еще расширение [Postman](https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm/related?hl=en) для браузеров на основе Chromium (для легкого создания запросов).
@@ -131,7 +132,7 @@ require 'vendor/autoload.php';
 $client = new \Elastica\Client();
 ```
 
-### Добавление документа
+### Добавление документа (пример Twit)
 
 ```php
 $id = 1;
