@@ -238,6 +238,12 @@ var_dump(Product::find($query)->getResults());
 
 Хорошим примером работы с `Elasticsearch` будет проект [http://phalconist.com/](https://github.com/phalconist/phalconist).
 
+# Русское сообщество
+
+![Фото сообщества](http://dmtry.me/img/articles/2015/9-2.png)
+
+## [Поисковый движок «Elasticsearch» во ВКонтакте](https://vk.com/elastic_search).
+
 # Выводы
 
 `Elasticsearch` - это отличнейшая замена `Sphinxsearch`, которую уже можно взять и использовать прямо сейчас :) Выбор за тобой :3
