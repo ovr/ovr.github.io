@@ -28,8 +28,8 @@
 
 ```bash
 cd /tmp
-wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-1.3.4.deb
-sudo dpkg -i elasticsearch-1.3.4.deb
+wget https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-1.5.2.deb
+sudo dpkg -i elasticsearch-1.5.2.deb
 sudo service elasticsearch start
 ```
 
