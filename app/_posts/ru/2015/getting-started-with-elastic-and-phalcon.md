@@ -1,5 +1,13 @@
-Каждый день, месяц появляются новые инструменты для разработки. На протежении 4 лет я использовал `SphinxSearch`, но на днях,
+Каждый день, месяц появляются новые инструменты для разработки. На протежении 4 лет я использовал `Sphinxsearch`, но на днях,
 благодаря [Сергею@serebro](https://github.com/serebro), мне пришлось познакомиться с `Elasticsearch`.
+
+Сегодня я буду рассказывать вам о новом поисковом движке `Elasticsearch`,
+который становиться стандартом в выборе поискового движга или NoSQL базы данных для хранения данных в целях текстового поиска по ним.
+
+Сайт проекта [http://www.elasticsearch.org/](http://www.elasticsearch.org/).
+
+По сути — это новый фронтенд к широко известному индексу Lucene.
+Главное отличие от конкурентов — это гибкость и простота в использовании. Работа с сервисом происходит в виде общения с помощью REST HTTP интерфейса.
 
 # Плюсы
 
@@ -20,7 +28,7 @@
 
 # Установка
 
-Установка `ElasticSearch` не сложный процесс. Для начала нужно перейти по ссылке [http://www.elasticsearch.org/overview/elkdownloads/](http://www.elasticsearch.org/overview/elkdownloads/)
+Установка `Elasticsearch` не сложный процесс. Для начала нужно перейти по ссылке [http://www.elasticsearch.org/overview/elkdownloads/](http://www.elasticsearch.org/overview/elkdownloads/)
 
 ## Ubuntu\Debian
 
@@ -41,17 +49,24 @@ sudo service elasticsearch start
 brew install elasticsearch
 ```
 
-Не забываем проверить сервер зайдя на http://localhost:9200/.
+Не забываем проверить сервер зайдя на [http://localhost:9200/](http://localhost:9200/).
+Используя `curl`
+
+```sh
+curl -X GET http://localhost:9200/
+```
 
 ## Плагины
 
-Elastic радует поддержкой многих функциональных плагинов к нему.
+`Elasticsearch` радует поддержкой многих функциональных плагинов к нему.
 
-Рекомендую еще рассширения [Postman](https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm/related?hl=en) для браузеров на основе Chromium.
+Рекомендую еще расширение [Postman](https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm/related?hl=en) для браузеров на основе Chromium (для легкого создания запросов).
 
-# Добавление записей в индекс
+# Пробуем в деле по HTTP REST
 
-Для примера создадим индекс продуктов магазина site и добавим 3 продукта
+## Добавление записей в индекс
+
+Для примера создадим индекс продуктов магазина site и добавим 3 продукта:
 
 ```bash
 curl -XPUT 'http://localhost:9200/site/products/1' -d '
@@ -62,20 +77,28 @@ curl -XPUT 'http://localhost:9200/site/products/1' -d '
 curl -XPUT 'http://localhost:9200/site/products/2' -d '
 {
     "title": "Super product 1234",
-    "price": 532.00
+    "price": 500.00
 }'
 curl -XPUT 'http://localhost:9200/site/products/3' -d '
 { 
     "id": "1",
     "title": "Super product fdsfs",
-    "price": 631.00
+    "price": 500.00
 }'
 ```
 
-# Сейчас найду
+## Поиск
+
+Ищем все продукты с названием Super:
 
 ```bash
 curl -XGET 'http://localhost:9200/site/products/_search?q=title:Super&pretty=true'
+```
+
+Подсчитываем количество продуктов с ценой равной 500
+
+```bash
+curl -XGET 'http://localhost:9200/site/products/_search?q=price:500&pretty=true'
 ```
 
 # Клиенты в PHP
@@ -100,18 +123,33 @@ composer require ruflin/elastica
 <?php
 require 'vendor/autoload.php';
 
-$client = new Elasticsearch\Client();
+$client = new \Elastica\Client();
 ```
 
 ### Добавление документа
 
 ```php
-$params = array();
-$params['body']  = array('testField' => 'abc');
-$params['index'] = 'my_index';
-$params['type']  = 'my_type';
-$params['id']    = 'my_id';
-$ret = $client->index($params);
+$id = 1;
+
+$tweet = array(
+    'id'      => $id,
+    'user'    => array(
+        'name'      => 'mewantcookie',
+        'fullName'  => 'Cookie Monster'
+    ),
+    'msg'     => 'Me wish there were expression for cookies like there is for apples. "A cookie a day make the doctor diagnose you with diabetes" not catchy.',
+    'tstamp'  => '1238081389',
+    'location'=> '41.12,-71.34',
+    '_boost'  => 1.0
+);
+
+$tweetDocument = new \Elastica\Document($id, $tweet);
+
+// Добавление твита в тип
+$elasticaType->addDocument($tweetDocument);
+
+// Обновление индекса
+$elasticaType->getIndex()->refresh();
 ```
 
 ### Получение документа
@@ -135,7 +173,7 @@ $updateParams['body']['doc']    = array('my_key' => 'new_value');
 $retUpdate = $client->update($updateParams);
 ```
 
-# А в Phalcon можно?
+# Использование в Phalcon
 
 Для начало создадим наш сервис:
 
@@ -144,7 +182,61 @@ $client = new \Elastica\Client($di->get('config')->elastica->toArray());
 return $client;
 ```
 
-Хорошим примером работы с `ElasticSearch` будет проект [http://phalconist.com/](https://github.com/phalconist/phalconist).
+Установим библиотеку для легкой работы:
+
+```bash
+composer require ovr/phalcon-elasticsearch
+```
+
+Создадим модель:
+
+```php
+<?php
+
+namespace Catalog\Model;
+
+use Elastica\Exception\NotFoundException;
+use Elastica\Query;
+
+use Phalcon\DI;
+use Phalcon\DI\Injectable;
+
+class Product extends Injectable
+{
+    use ElasticModelTrait;
+
+    protected static $index = 'my-project';
+    protected static $type = 'products';
+
+    public $data;
+
+    /**
+     * @param array $query
+     * @param array $options
+     * @return \Elastica\ResultSet
+     */
+    public static function find(array $query = [], array $options = null)
+    {
+        return static::getStorage()->search($query, $options);
+    }
+}
+```
+
+Просто запрос:
+
+```php
+$query = [
+    '_source' => [
+        'id',
+        'title'
+    ],
+    'size' => 5,
+];
+
+var_dump(Product::find($query)->getResults());
+```
+
+Хорошим примером работы с `Elasticsearch` будет проект [http://phalconist.com/](https://github.com/phalconist/phalconist).
 
 # Выводы
 
