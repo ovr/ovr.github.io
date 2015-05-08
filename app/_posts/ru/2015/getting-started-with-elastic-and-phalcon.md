@@ -89,7 +89,7 @@ curl -XGET 'http://localhost:9200/site/products/_search?q=title:Super&pretty=tru
 Зайдем в корень с проектом и установим понравившийся нам клиент, мой выбор это
 
 ```bash
-composer require elasticsearch/elasticsearch
+composer require ruflin/elastica
 ```
 
 ## Пример использование
@@ -148,4 +148,4 @@ return $client;
 
 # Выводы
 
-`Elasticasearch` - это отличнейшая замена `Sphinxsearch`, которую уже можно взять и использовать прямо сейчас :) Выбор за тобой :3
+`Elasticsearch` - это отличнейшая замена `Sphinxsearch`, которую уже можно взять и использовать прямо сейчас :) Выбор за тобой :3
