@@ -89,7 +89,7 @@ curl -XGET 'http://localhost:9200/site/products/_search?q=title:Super&pretty=tru
 Зайдем в корень с проектом и установим понравившийся нам клиент
 
 ```bash
-composer require elasticsearch/elasticsearch
+composer require ruflin/elastica
 ```
 
 # А в Phalcon можно?
