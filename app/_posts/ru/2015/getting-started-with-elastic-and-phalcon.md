@@ -252,9 +252,7 @@ var_dump(Product::find($query)->getResults());
 
 # Русское сообщество
 
-![Фото сообщества](http://dmtry.me/img/articles/2015/9-2.png)
-
-## [Поисковый движок «Elasticsearch» во ВКонтакте](https://vk.com/elastic_search).
+#### [Поисковый движок «Elasticsearch» во ВКонтакте](https://vk.com/elastic_search).
 
 # Выводы
 
