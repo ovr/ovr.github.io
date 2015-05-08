@@ -1,4 +1,4 @@
-Каждый день, месяц появляеются новые инструменты для разработки. На протежении 4 лет я использовал `SphinxSearch`, но на днях,
+Каждый день, месяц появляются новые инструменты для разработки. На протежении 4 лет я использовал `SphinxSearch`, но на днях,
 благодаря [Сергею@serebro](https://github.com/serebro), мне пришлось познакомиться с `Elasticsearch`.
 
 # Плюсы
@@ -47,7 +47,7 @@ brew install elasticsearch
 
 Elastic радует поддержкой многих функциональных плагинов к нему.
 
-Рекомендую еще рассширения (Postman)[https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm/related?hl=en] для браузеров на основе Chromium.
+Рекомендую еще рассширения [Postman](https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm/related?hl=en) для браузеров на основе Chromium.
 
 # Добавление записей в индекс
 
