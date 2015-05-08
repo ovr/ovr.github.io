@@ -60,11 +60,16 @@ curl -X GET http://localhost:9200/
 
 `Elasticsearch` радует поддержкой многих функциональных плагинов к нему.
 
+Самые популярные:
+
+[Kibana](https://github.com/elastic/kibana) - это админ панель для анализа аналитики и поиска.
+[Elasticsearch Gui](https://github.com/jettro/elasticsearch-gui) - это GUI написанный на AngularJS.
+
 Рекомендую еще расширение [Postman](https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm/related?hl=en) для браузеров на основе Chromium (для легкого создания запросов).
 
 # Пробуем в деле по HTTP REST
 
-## Добавление записей в индекс
+### Добавление записей в индекс
 
 Для примера создадим индекс продуктов магазина site и добавим 3 продукта:
 
@@ -87,7 +92,7 @@ curl -XPUT 'http://localhost:9200/site/products/3' -d '
 }'
 ```
 
-## Поиск
+### Поиск
 
 Ищем все продукты с названием Super:
 
@@ -152,26 +157,33 @@ $elasticaType->addDocument($tweetDocument);
 $elasticaType->getIndex()->refresh();
 ```
 
-### Получение документа
+### Поиск
 
 ```php
-$getParams = array();
-$getParams['index'] = 'my_index';
-$getParams['type']  = 'my_type';
-$getParams['id']    = 'my_id';
-$retDoc = $client->get($getParams);
+$query = new Elastica\Query();
+
+$query
+    ->setFrom(50)
+    ->setSize(10)
+    ->setSort(['price' => 'asc'])
+    ->setFields(['id', 'title', 'price'])])
+    ->setExplain(true)
+    ->setVersion(true)
+    ->setMinScore(0.5);
+
+$client->setQuery($query);
+
+var_dump($search->count()); // Кол-во элементов по запросу
+
+/** @var \Elastica\ResultSet */
+$resultSet = $search->search();
+
+foreach ($search->scanAndScroll() as $scrollId => $resultSet) {
+    // ... handle Elastica\ResultSet
+}
 ```
 
-### Поиск документа
-
-```php
-$updateParams['index']          = 'my_index';
-$updateParams['type']           = 'my_type';
-$updateParams['id']             = 'my_id';
-$updateParams['body']['doc']    = array('my_key' => 'new_value');
-
-$retUpdate = $client->update($updateParams);
-```
+Лучше всего смотреть все в [документации](http://elastica.io/api/namespaces/Elastica.html).
 
 # Использование в Phalcon
 
