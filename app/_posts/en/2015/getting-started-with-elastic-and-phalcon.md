@@ -1,5 +1,5 @@
-Every day, month, появляются новые инструменты для разработки. For 4 years I have used `Sphinxsearch`, but last days,
-with [Sergei @serebro](https://github.com/serebro) help, I started to use `Elasticsearch`.
+Every day, month, We see new new tools for development. For 4 years I have used `Sphinxsearch`, but last days,
+with [Sergei @serebro](https://github.com/serebro)'s help, I started to use `Elasticsearch`.
 
 Сегодня я буду рассказывать вам о новом поисковом движке `Elasticsearch`,
 который становиться стандартом в выборе поискового движка или NoSQL базы данных для хранения данных в целях текстового поиска по ним.
@@ -22,7 +22,7 @@ The main difference from competitors are flexibility and easiness. Working with 
 
 # Negative
 
-Как таковых не нашел. Если сравнивать с `Sphinxsearch`, то он проигрывает, причем без вариантов (конфигурация, морфология, настройка индексации, нет REST HTTP).
+I did not find anything, but if We are going to compared with `Sphinxsearch`:  `Sphinxsearch` is not okey, without any ways (configuration, morphology, setting indexation, not supported communicating via REST HTTP).
 
 # Setting
 
