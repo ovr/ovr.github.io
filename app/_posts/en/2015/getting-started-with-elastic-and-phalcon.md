@@ -58,19 +58,19 @@ curl -X GET http://localhost:9200/
 
 `Elasticsearch` радует поддержкой многих функциональных плагинов к нему.
 
-Самые популярные:
+Most popular:
 
-[Kibana](https://github.com/elastic/kibana) - это админ панель для анализа аналитики и поиска.
+[Kibana](https://github.com/elastic/kibana) - admin-panel для анализа аналитики и поиска.
 
-[Elasticsearch Gui](https://github.com/jettro/elasticsearch-gui) - это GUI написанный на AngularJS.
+[Elasticsearch Gui](https://github.com/jettro/elasticsearch-gui) - GUI on AngularJS.
 
 Рекомендую еще расширение [Postman](https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm/related?hl=en) для браузеров на основе Chromium (для легкого создания запросов).
 
-# Пробуем в деле по HTTP REST
+# Try in on HTTP REST
 
-### Добавление записей в индекс
+### Adding documents into index
 
-Для примера создадим индекс продуктов магазина site и добавим 3 продукта:
+For example, I am going to create an index and add 3 documents into It:
 
 ```bash
 curl -XPUT 'http://localhost:9200/site/products/1' -d '
@@ -93,7 +93,7 @@ curl -XPUT 'http://localhost:9200/site/products/3' -d '
 
 ### Search
 
-Ищем все продукты с названием Super:
+Searching all products with title = `Super`:
 
 ```bash
 curl -XGET 'http://localhost:9200/site/products/_search?q=title:Super&pretty=true'
@@ -119,7 +119,7 @@ curl -XGET 'http://localhost:9200/site/products/_search?q=price:500&pretty=true'
 composer require ruflin/elastica
 ```
 
-## Пример использование
+## Example of usage
 
 После установки библиотеке создадим клиент:
 
@@ -177,7 +177,7 @@ foreach ($search->scanAndScroll() as $scrollId => $resultSet) {
 }
 ```
 
-Лучше всего смотреть все в [документации](http://elastica.io/api/namespaces/Elastica.html).
+The best way to learn it, will be [Docs](http://elastica.io/api/namespaces/Elastica.html).
 
 # Working in Phalcon
 
