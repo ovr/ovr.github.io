@@ -86,7 +86,7 @@ curl -XPUT 'http://localhost:9200/site/products/2' -d '
     "price": 500.00
 }'
 curl -XPUT 'http://localhost:9200/site/products/3' -d '
-{ 
+{
     "id": "1",
     "title": "Super product fdsfs",
     "price": 500.00
@@ -183,17 +183,17 @@ foreach ($search->scanAndScroll() as $scrollId => $resultSet) {
 
 # Использование в Phalcon
 
-Для начало создадим наш сервис:
-
-```php
-$client = new \Elastica\Client($di->get('config')->elastica->toArray());
-return $client;
-```
-
 Установим библиотеку для легкой работы:
 
 ```bash
 composer require ovr/phalcon-elasticsearch
+```
+
+Создадим наш сервис:
+
+```php
+$client = new \Elastica\Client($di->get('config')->elastica->toArray());
+return $client;
 ```
 
 Создадим модель:
