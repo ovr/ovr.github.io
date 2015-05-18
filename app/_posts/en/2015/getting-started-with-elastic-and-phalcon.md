@@ -1,8 +1,8 @@
 Every day, month, We see new new tools for development. For 4 years I have used `Sphinxsearch`, but last days,
 with [Sergei @serebro](https://github.com/serebro)'s help, I started to use `Elasticsearch`.
 
-Сегодня я буду рассказывать вам о новом поисковом движке `Elasticsearch`,
-который становиться стандартом в выборе поискового движка или NoSQL базы данных для хранения данных в целях текстового поиска по ним.
+Today I'll tell you about `Elasticsearch`,
+which is becoming to be the standard in the choice of search engine, or NoSQL database to store data for next full text search on them.
 
 Website [http://www.elasticsearch.org/](http://www.elasticsearch.org/).
 
@@ -26,11 +26,11 @@ I did not find anything, but if We are going to compared with `Sphinxsearch`:  `
 
 # Setting
 
-Установка `Elasticsearch` не сложный процесс. Для начала нужно перейти по ссылке [http://www.elasticsearch.org/overview/elkdownloads/](http://www.elasticsearch.org/overview/elkdownloads/)
+Installing the `Elasticsearch` is not a hard process. First you need to click on the link [http://www.elasticsearch.org/overview/elkdownloads/](http://www.elasticsearch.org/overview/elkdownloads/).
 
 ## Ubuntu\Debian
 
-Если вы используете Debian family систему то процесс установки будет следующим:
+If you are using Debian family system:
 
 ```bash
 cd /tmp
@@ -47,7 +47,7 @@ Brew way like milky way :3
 brew install elasticsearch
 ```
 
-Не забываем проверить сервер зайдя на [http://localhost:9200/](http://localhost:9200/).
+Do not forget to check the server by open [http://localhost:9200/](http://localhost:9200/).
 We can use `curl`
 
 ```sh
@@ -56,15 +56,13 @@ curl -X GET http://localhost:9200/
 
 ## Plugins
 
-`Elasticsearch` радует поддержкой многих функциональных плагинов к нему.
-
 Most popular:
 
-[Kibana](https://github.com/elastic/kibana) - admin-panel для анализа аналитики и поиска.
+[Kibana](https://github.com/elastic/kibana) - admin-panel for analysis analytics and search.
 
 [Elasticsearch Gui](https://github.com/jettro/elasticsearch-gui) - GUI on AngularJS.
 
-Рекомендую еще расширение [Postman](https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm/related?hl=en) для браузеров на основе Chromium (для легкого создания запросов).
+I hightly recommend [Postman](https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm/related?hl=en), it's an exstension for browsers based on Chromium (Easy way to create REST API calls by GUI).
 
 # Try in on HTTP REST
 
@@ -99,7 +97,7 @@ Searching all products with title = `Super`:
 curl -XGET 'http://localhost:9200/site/products/_search?q=title:Super&pretty=true'
 ```
 
-Подсчитываем количество продуктов с ценой равной 500
+Counting products with price = `500`:
 
 ```bash
 curl -XGET 'http://localhost:9200/site/products/_search?q=price:500&pretty=true'
@@ -107,13 +105,13 @@ curl -XGET 'http://localhost:9200/site/products/_search?q=price:500&pretty=true'
 
 # Clients for PHP
 
-Для того что бы использовать ElasticSearch в PHP нам нужно:
+In order to use ElasticSearch with PHP, We need:
 
 * PHP >= 5.3.9
 * Composer
 * Curl ext
 
-Зайдем в корень с проектом и установим понравившийся нам клиент, мой выбор это
+Okey, will change our dir to project's root dir and install PHP client:
 
 ```bash
 composer require ruflin/elastica
@@ -121,7 +119,7 @@ composer require ruflin/elastica
 
 ## Example of usage
 
-После установки библиотеке создадим клиент:
+After installing the library will create a client:
 
 ```
 <?php
@@ -243,8 +241,8 @@ $query = [
 var_dump(Product::find($query)->getResults());
 ```
 
-Хорошим примером работы с `Elasticsearch` будет проект [http://phalconist.com/](https://github.com/phalconist/phalconist).
+A good example of working with `Elasticsearch` will be [http://phalconist.com/](https://github.com/phalconist/phalconist) project.
 
 # Findings
 
-`Elasticsearch` - это отличнейшая замена `Sphinxsearch`, которую уже можно взять и использовать прямо сейчас :) Выбор за тобой :3
+`Elasticsearch` is an excellent replacement for `Sphinxsearch`, which it is already possible to pick up and use right now :) Try it :3
