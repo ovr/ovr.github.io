@@ -160,6 +160,10 @@ class Application {
                             }
                         }
 
+                        if (!isset($article->twittId)) {
+                            $article->twittId = 603125485028114432;
+                        }
+
                         $intro_text = file($this->dir . '/data/cache/'. $this->currentLanguage . '/' . $article->name.'.html');
                         $article->intro_text = implode('', array_slice($intro_text, $article->intro_text_start_html_line, $article->intro_text_end_html_line-$article->intro_text_start_html_line));
 
