@@ -71,6 +71,7 @@ class Application {
     );
 
     private $config;
+
     /**
      * @return array
      */
@@ -159,7 +160,7 @@ class Application {
                             }
                         }
 
-                        $intro_text = file($this->dir . '/data/cache/'. $this->currentLanguage . '/' .$article->name.'.html');
+                        $intro_text = file($this->dir . '/data/cache/'. $this->currentLanguage . '/' . $article->name.'.html');
                         $article->intro_text = implode('', array_slice($intro_text, $article->intro_text_start_html_line, $article->intro_text_end_html_line-$article->intro_text_start_html_line));
 
                         $article->og_description = strip_tags($article->intro_text);
@@ -167,7 +168,8 @@ class Application {
                             'article' => $article,
                             'article_html' => file_get_contents($this->dir . '/data/cache/'. $this->currentLanguage . '/' .$article->name.'.html'),
                             'currentLanguage' => $this->currentLanguage,
-                            'languageChangeUrl' => $this->currentLanguage == 'ru' ? '//en.'.($this->getConfig()['domain']).'/' : '//'.$this->getConfig()['domain'].'/'
+                            'anotherLanguage' => $this->getAnotherLanguage(),
+                            'languageChangeUrl' => $this->getLanguageChangeUrl()
                         ));
                         break;
                     case 'default':
@@ -186,7 +188,9 @@ class Application {
                         echo $this->twig->render('index.twig', array(
                             'articles' => $articles,
                             'language' => $this->currentLanguage,
-                            'languageChangeUrl' => $this->currentLanguage == 'ru' ? '//en.'.($this->getConfig()['domain']).'/' : '//'.$this->getConfig()['domain'].'/'));
+                            'anotherLanguage' => $this->getAnotherLanguage(),
+                            'languageChangeUrl' => $this->getLanguageChangeUrl()
+                        ));
                         break;
                     case 'about':
                         echo $this->twig->render('about.twig');
@@ -195,6 +199,17 @@ class Application {
                 break;
         }
     }
+
+    protected function getAnotherLanguage()
+    {
+        return $this->currentLanguage == 'ru' ? 'en' : 'ru';
+    }
+
+    protected function getLanguageChangeUrl()
+    {
+        return $this->currentLanguage == 'ru' ? '//en.' . ($this->getConfig()['domain']).'/' : '//'.$this->getConfig()['domain'] . '/';
+    }
+
 
     /**
      * @param mixed $currentLanguage
