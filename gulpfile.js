@@ -11,7 +11,8 @@ gulp.task('stylesheets', function () {
         './public/src/vendor/fontawesome/css/font-awesome.min.css',
         './public/css/normalize.css',
         './public/css/demo.css',
-        './public/css/component.css'
+        './public/css/component.css',
+        './public/src/vendor/rrssb/css/rrssb.css'
     ])
     .pipe(concat('all.css'))
     .pipe(minifyCSS({removeEmpty: true, keepSpecialComments: 0}))
