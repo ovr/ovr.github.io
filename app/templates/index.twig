@@ -11,25 +11,27 @@
 	<div class="row">
 		<div class="col-12 col-sm-8 col-lg-8 clearfix">
 			{% for article in articles %}
-				<div class="col-md-12 blogShort">
-					<h1>
-						<a href="/article/{{ article.name }}/">
-							{{ article.title }}
-						</a>
-					</h1>
+				<article class="col-md-12 blogShort">
+                    <header>
+                        <h1>
+                            <a href="/article/{{ article.name }}/">
+                                {{ article.title }}
+                            </a>
+                        </h1>
+                    </header>
 
-					<article>
-						{% autoescape false %}
-						{{ article.intro_text }}
-						{% endautoescape %}
-					</article>
+                    <p>
+                    {% autoescape false %}
+                        {{ article.intro_text }}
+                    {% endautoescape %}
+                    </p>
 
 					<a class="btn btn-blog pull-right marginBottom10" href="/article/{{ article.name }}/">
 						{% trans %}
 						Читать далее
 						{% endtrans %}
 					</a>
-				</div>
+				</article>
 			{% endfor %}
 		</div>
 		<div class="col-6 col-sm-4 col-lg-4">

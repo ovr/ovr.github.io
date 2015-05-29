@@ -11,9 +11,9 @@ If you detect any typo, bug or error you can open pull request with commit(s) (f
 You can hire me
 ---------------
 
-[Мое резюме](http://dmtry.me/about)
+[Мое резюме](http://dmtry.me/about).
 
-[My resume](http://en.dmtry.me/about)
+[My resume](http://en.dmtry.me/about).
 
 My base LICENSE
 ---------------
