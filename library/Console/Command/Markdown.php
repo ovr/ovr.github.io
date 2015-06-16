@@ -49,8 +49,14 @@ class Markdown extends Command
         $articles = json_decode(file_get_contents($postDir . 'articles.json'));
 
         foreach ($articles as $article) {
-            $html = $this->markdownGenerator->getRenderedHTML(file_get_contents($postDir . date('Y', strtotime($article->dateCreated)) . DIRECTORY_SEPARATOR . $article->name . '.md'));
-            file_put_contents($this->getApplication()->getDir() . '/data/cache/' . $language . '/' . $article->name . '.html', $html);
+            $path = $postDir . date('Y', strtotime($article->dateCreated)) . DIRECTORY_SEPARATOR;
+
+            if (file_exists($path . $article->name . '.html')) {
+                file_put_contents($this->getApplication()->getDir() . '/data/cache/' . $language . '/' . $article->name . '.html', file_get_contents($path . $article->name . '.html'));
+            } else if (file_exists($path . $article->name . '.md')) {
+                $html = $this->markdownGenerator->getRenderedHTML(file_get_contents($path . $article->name . '.md'));
+                file_put_contents($this->getApplication()->getDir() . '/data/cache/' . $language . '/' . $article->name . '.html', $html);
+            }
         }
 
         return $this;
