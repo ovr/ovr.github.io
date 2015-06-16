@@ -9,7 +9,8 @@
         "id": 11,
         "dateCreated": "2015-06-16 15:00:00",
         "dateModified": "2015-06-16 15:00:00",
-        "published": true
+        "published": true,
+        "math": true
     },
     {
         "title": "Долгожданный выход Zephir 0.7",
