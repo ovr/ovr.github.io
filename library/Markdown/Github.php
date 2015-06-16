@@ -31,9 +31,9 @@ class Github
         $content = json_encode($sendObj);
 
         //Build headers
-        $headers = array("Content-type: application/json", "User-Agent: curl");
+        $headers = array("Content-type: application/json", "User-Agent: dmtry.me blog 1.0");
         $encoded = base64_encode($this->username . ':' . $this->password);
-        $headers[] = "x-oauth-basic: {$this->token}";
+        $headers[] = "Authorization: token {$this->token}";
 
         //Build curl request to github's api
         $curl = curl_init('https://api.github.com/markdown');
