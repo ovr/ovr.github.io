@@ -1,5 +1,17 @@
 [
     {
+        "title": "Решение СЛАУ методом LU-разложения по Алгоритму Краута",
+        "name": "reshenie_slau_metodom_razlozhenija",
+        "intro_text_start_html_line": 0,
+        "intro_text_end_html_line": 2,
+        "tags": [],
+        "comments": true,
+        "id": 11,
+        "dateCreated": "2015-06-16 15:00:00",
+        "dateModified": "2015-06-16 15:00:00",
+        "published": true
+    },
+    {
         "title": "Долгожданный выход Zephir 0.7",
         "name": "zephir-0.7-released",
         "intro_text_start_html_line": 0,
