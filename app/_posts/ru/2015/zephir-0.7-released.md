@@ -1,9 +1,9 @@
-Вот и наступило долгожданное время выхода версии 0.7 и неофициального перехода состояния проекта в Beta.  Новая версия несет более чем 30 исправлений и улучшений.
+Вот и наступило долгожданное время выхода версии 0.7 и официального перехода проекта в состояние `Beta`.  Новая версия несет более чем 30 исправлений и улучшений.
 
 ## Новый модификатор Internal для методов
 
-Модификатор internal позволяет сделать из нашего PHP метода полноценный аналог Си функции для ускорения производительность.
-Напишем простой класс с методом реализующий нахождения чисел фабоначи:
+Модификатор `internal` позволяет сделать из нашего PHP метода полноценный аналог Си-функции для ускорения производительности.
+Напишем простой класс с методом реализующий нахождения чисел Фибоначчи:
 
 ```zep
 class McallInternal
@@ -62,6 +62,121 @@ PHP 5.6: 0.55841708183289
 
 4.5/5x 450%/500% improvement
 ```
+
+#### Под капотом
+
+Почему такой выйгрышь? Давайте разбираться. Обычный PHP land метод сгенерированный Zephir будет выглядить таким образом:
+```c
+PHP_METHOD(Test_McallInternal, other) {
+    zval *a_param = NULL, *b_param = NULL;
+    long a, b;
+
+    //Парсинг параметров и стэка
+    zephir_fetch_params(0, 2, 0, &a_param, &b_param);
+
+    // Перевод значение zval в long
+    a = zephir_get_intval(a_param);
+    b = zephir_get_intval(b_param);
+
+
+    RETURN_DOUBLE(zephir_safe_div_long_long(a, b TSRMLS_CC));
+}
+```
+
+Вызов PHP land метода:
+```c
+// Слот кэша
+zephir_fcall_cache_entry *_6 = NULL;
+// Флаг статуса функции после вызова, что бы понять есть ли exception?
+int ZEPHIR_LAST_CALL_STATUS;
+
+// Результат работы функции
+zval *_result = NULL,
+
+// Параметры 1 и 2
+zval *_parameter1 = NULL, *_5 = NULL;
+
+//Необходимо выделить память под первый параметр
+ZEPHIR_INIT_NVAR(_parameter1);
+//Положим значение в структуры zval
+ZVAL_LONG(_parameter1, 1);
+
+//И не забыть про второй параметр ;)
+ZEPHIR_INIT_NVAR(_parameter2);
+//Положим значение в структуры zval
+ZVAL_LONG(_parameter2, 2);
+
+/**
+ * Динамически вызой метода
+ * this_ptr это zend_class_entry на текущий класс
+ */
+ZEPHIR_CALL_METHOD(&_result, this_ptr, "other", &_6, 0, _parameter1, _parameter2);
+
+// Проверяем из контекста какой код вернул метод
+zephir_check_call_status();
+```
+
+Как уже стало видно, тут мы видим очень большой оверхед на вызовах. Ну а что же будет с использование модификатора `internal`:
+```c
+static void zep_Test_McallInternal_other(int ht, zval *return_value, zval **return_value_ptr, zval *this_ptr, int return_value_used, zval *a_param_ext, zval *b_param_ext TSRMLS_DC) {
+    zval *a_param = NULL, *b_param = NULL;
+    long a, b;
+
+    /**
+     * Надеюсь gcc/clang не такие дураки как мы ;)
+     */
+    a_param = a_param_ext;
+    b_param = b_param_ext;
+
+    // Перевод значение zval в long
+    a = zephir_get_intval(a_param);
+    b = zephir_get_intval(b_param);
+
+
+    RETURN_DOUBLE(zephir_safe_div_long_long(a, b TSRMLS_CC));
+}
+```
+
+Ну и сам вызов `internal` метода:
+
+```c
+// Результат работы функции - HEAP
+zval *_result = NULL;
+
+// Параметры в структуре zval но уже не heap а stack
+zval parameter1 = zval_used_for_init, parameter2 = zval_used_for_init;
+
+// Флаг статуса функции после вызова, что бы понять есть ли exception?
+int ZEPHIR_LAST_CALL_STATUS;
+
+//Чистим пред значение в стэке
+ZEPHIR_SINIT_NVAR(parameter1);
+//Новое значение
+ZVAL_LONG(&_4, 1);
+
+//Чистим пред значение в стэке
+ZEPHIR_SINIT_NVAR(_5);
+//Новое значение
+ZVAL_LONG(&_5, 2);
+
+/**
+ * Вызой нативной статичной функции
+ * this_ptr это zend_class_entry на текущий класс
+ *
+ * Внимание! Параметры передаются уже ссылками, а не указателями
+ */
+ZEPHIR_CALL_INTERNAL_METHOD_P2(&_result, this_ptr, zep_Test_McallInternal_other, &parameter1, &parameter2);
+// Проверяем из контекста какой код вернул метод
+zephir_check_call_status();
+```
+
+Различия между `internal` методом? В `internal`:
+
+* Нет передачи параметров по стеку через Zend, нативный Си вызов. 
+* Нет Получения из стека.
+* Нет магии с контекстом.
+* Нет динамического слотового кэша, так как не нужен.
+* Параметры для вызова `internal` метода лежат в Stack (Stack быстрее HEAP).
 
 # Реализован глобальный статический кэш
 
