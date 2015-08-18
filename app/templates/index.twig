@@ -1,31 +1,28 @@
 {% extends "layout.twig" %}
 
 {% block title %}
-	{% trans %}
-	Статьи
-	{% endtrans %}
+	{% trans %}Статьи{% endtrans %}
 {% endblock %}
 
 {% block content %}
-
 	<div class="row">
 		<div class="col-12 col-sm-8 col-lg-8 clearfix">
 			{% for article in articles %}
 				<article class="col-md-12 blogShort">
-                    <header>
-                        <h1>
-                            <a href="/article/{{ article.name }}/">
-                                {{ article.title }}
-                            </a>
-                        </h1>
-                    </header>
-
-                    <p>
-                    {% autoescape false %}
-                        {{ article.intro_text }}
-                    {% endautoescape %}
-                    </p>
-
+	            <header>
+	                <h1>
+	                    <a href="/article/{{ article.name }}/">
+	                        {{ article.title }}
+	                    </a>
+	                </h1>
+	            </header>
+	
+	            <p>
+	            {% autoescape false %}
+	                {{ article.intro_text }}
+	            {% endautoescape %}
+	            </p>
+	
 					<a class="btn btn-blog pull-right marginBottom10" href="/article/{{ article.name }}/">
 						{% trans %}
 						Читать далее
@@ -61,23 +58,31 @@
 				</div>
 				<div class="clear"></div>
 			</div>
-
+	
 			<h2 class="title">
 				{% trans %}
 				Будь с нами
 				{% endtrans %}
 			</h2>
-
+	
 			<div id="phalcon_vk" class="panel"></div>
 			<div id="zephir_vk" class="panel"></div>
 		</div>
 	</div>
-
-	<script src="https://cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
-	<script type="text/javascript" src="//vk.com/js/api/openapi.js?112"></script>
+	
+	<script async src="https://cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
 	<script type="text/javascript">
+	window.vkAsyncInit = function() {
 		VK.Widgets.Group("phalcon_vk", {mode: 0, width: "auto", height: "250", color1: 'FFFFFF', color2: '2B587A', color3: '5B7FA6'}, 45934290);
 		VK.Widgets.Group("zephir_vk", {mode: 0, width: "auto", height: "250", color1: 'FFFFFF', color2: '2B587A', color3: '5B7FA6'}, 67722434);
+	};
+	
+	setTimeout(function() {
+		var el = document.createElement("script");
+		el.type = "text/javascript";
+		el.src = "//vk.com/js/api/openapi.js";
+		el.async = true;
+		document.body.appendChild(el);
+	}, 0);
 	</script>
-
 {% endblock %}
