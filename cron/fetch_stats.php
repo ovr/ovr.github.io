@@ -9,10 +9,6 @@ include_once __DIR__ . '/../vendor/autoload.php';
 
 $profileUrl = 'https://github.com/ovr.json';
 
-use Zend\Debug\Debug;
-
-Debug::setSapi(PHP_SAPI);
-
 ?>
 <!doctype html>
 <html lang="en">
@@ -22,7 +18,10 @@ Debug::setSapi(PHP_SAPI);
 </head>
 <body>
 <?php
-	Debug::dump(json_decode(file_get_contents($profileUrl)));
+	// Zend\Debug has no Laminas successor, so dump through var_dump().
+	echo '<pre>';
+	var_dump(json_decode(file_get_contents($profileUrl)));
+	echo '</pre>';
 ?>
 </body>
 </html>

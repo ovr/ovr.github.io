@@ -5,7 +5,7 @@
 
 include_once __DIR__ . '/../vendor/autoload.php';
 
-$feed = new Zend\Feed\Writer\Feed;
+$feed = new Laminas\Feed\Writer\Feed;
 $feed->setTitle('Dmitry Patsura Blog');
 $feed->setLink('http://dmtry.me/');
 $feed->setFeedLink('http://dmtry.me/rss/atom.xml', 'atom');
@@ -13,7 +13,7 @@ $feed->setDescription('My blog');
 $feed->addAuthor(array(
     'name'  => 'Dmitry Patsura',
     'email' => 'zaets28rus@gmail.com',
-    'uri'   => 'http://dmtry.me/about',
+    'uri'   => 'https://resume.dmtry.me/',
 ));
 
 $articles = json_decode(file_get_contents(__DIR__ . '/articles.json'));
@@ -34,7 +34,7 @@ foreach($articles as $article) {
     $entry->addAuthor(array(
         'name'  => 'Dmitry Patsura',
         'email' => 'zaets28rus@gmail.com',
-        'uri'   => 'http://dmtry.me/about',
+        'uri'   => 'https://resume.dmtry.me/',
     ));
 
     $entry->setDateModified(strtotime($article->dateModified));

@@ -28,7 +28,7 @@ class Markdown extends Command
         $this->setName('markdown');
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $output->writeln("Start generating markdown");
 
@@ -38,6 +38,7 @@ class Markdown extends Command
         $this->generateMarkDown('ru', $output);
         $this->generateMarkDown('en', $output);
 
+        return self::SUCCESS;
     }
 
     private function generateMarkDown($language, OutputInterface $output)

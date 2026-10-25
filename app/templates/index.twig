@@ -1,7 +1,7 @@
 {% extends "layout.twig" %}
 
 {% block title %}
-	{% trans %}Статьи{% endtrans %}
+	{{ 'Статьи'|trans }}
 {% endblock %}
 
 {% block content %}
@@ -24,9 +24,7 @@
 	            </p>
 	
 					<a class="btn btn-blog pull-right marginBottom10" href="/article/{{ article.name }}/">
-						{% trans %}
-						Читать далее
-						{% endtrans %}
+						{{ 'Читать далее'|trans }}
 					</a>
 				</article>
 			{% endfor %}
@@ -35,9 +33,7 @@
 			<div class="widget HTML" id="HTML2">
 				<div class="github-card" data-user="ovr"></div>
 				<h2 class="title">
-					{% trans %}
-					Подписка
-					{% endtrans %}
+					{{ 'Подписка'|trans }}
 				</h2>
 				<div class="widget-content">
 					<div class="well">
@@ -60,9 +56,7 @@
 			</div>
 	
 			<h2 class="title">
-				{% trans %}
-				Будь с нами
-				{% endtrans %}
+				{{ 'Будь с нами'|trans }}
 			</h2>
 	
 			<div id="phalcon_vk" class="panel"></div>

@@ -10,6 +10,11 @@ use FastRoute\RouteCollector;
 
 class Application {
     /**
+     * Where /about sends visitors now that the page itself is gone.
+     */
+    const RESUME_URL = 'https://resume.dmtry.me/';
+
+    /**
      * @var
      */
     private $dispatcher;
@@ -35,14 +40,15 @@ class Application {
 
         chdir(__DIR__ . '/../app');
 
-        $loader = new \Twig_Loader_Filesystem('templates');
+        $loader = new \Twig\Loader\FilesystemLoader('templates');
 
-        $this->twig = new \Twig_Environment($loader, array(
+        $this->twig = new \Twig\Environment($loader, array(
             'cache' => 'data/twig_cache',
             'auto_reload' => true
         ));
+        // Templates translate through the `trans` filter of this extension:
+        // twig/extensions, which used to provide the {% trans %} tag, is abandoned.
         $this->twig->addExtension(new \App\Twig\Extension());
-        $this->twig->addExtension(new \Twig_Extensions_Extension_I18n());
 
         if (is_null($this->currentLanguage)) {
             $this->currentLanguage = $this->getBestLanguage();
@@ -133,6 +139,34 @@ class Application {
         return $articles;
     }
 
+    /**
+     * Path of the HTML the `markdown` console command renders for an article.
+     */
+    private function getArticleCachePath($article)
+    {
+        return $this->dir . '/data/cache/' . $this->currentLanguage . '/' . $article->name . '.html';
+    }
+
+    /**
+     * Intro lines of an article, or '' when its cache has not been generated:
+     * file() returns false for a missing file, which used to take down the
+     * whole page through array_slice().
+     */
+    private function getArticleIntroText($article)
+    {
+        $lines = @file($this->getArticleCachePath($article));
+
+        if ($lines === false) {
+            return '';
+        }
+
+        return implode('', array_slice(
+            $lines,
+            $article->intro_text_start_html_line,
+            $article->intro_text_end_html_line - $article->intro_text_start_html_line
+        ));
+    }
+
     public function run()
     {
         $httpMethod = $_SERVER['REQUEST_METHOD'];
@@ -143,8 +177,7 @@ class Application {
         switch ($routeInfo[0]) {
             case Dispatcher::METHOD_NOT_ALLOWED:
             case Dispatcher::NOT_FOUND:
-                header('Status: 404 Not Found');
-                echo $this->twig->render('not-found.twig');
+                $this->renderNotFound();
                 break;
             case Dispatcher::FOUND:
                 $handler = $routeInfo[1];
@@ -152,25 +185,36 @@ class Application {
 
                 switch ($handler) {
                     case 'article':
-                        $articles = $this->getArticles();
+                        $article = null;
 
-                        foreach($articles as $article) {
-                            if ($article->name == $vars['title']) {
+                        foreach($this->getArticles() as $candidate) {
+                            if ($candidate->name == $vars['title']) {
+                                $article = $candidate;
                                 break;
                             }
+                        }
+
+                        // Without this the loop left the last article of the list
+                        // in $article, so an unknown slug served that one.
+                        $article_html = $article === null
+                            ? false
+                            : @file_get_contents($this->getArticleCachePath($article));
+
+                        if ($article_html === false) {
+                            $this->renderNotFound();
+                            break;
                         }
 
                         if (!isset($article->twittId)) {
                             $article->twittId = 603125485028114432;
                         }
 
-                        $intro_text = file($this->dir . '/data/cache/'. $this->currentLanguage . '/' . $article->name.'.html');
-                        $article->intro_text = implode('', array_slice($intro_text, $article->intro_text_start_html_line, $article->intro_text_end_html_line-$article->intro_text_start_html_line));
+                        $article->intro_text = $this->getArticleIntroText($article);
 
                         $article->og_description = strip_tags($article->intro_text);
                         echo $this->twig->render('article.twig', array(
                             'article' => $article,
-                            'article_html' => file_get_contents($this->dir . '/data/cache/'. $this->currentLanguage . '/' .$article->name.'.html'),
+                            'article_html' => $article_html,
                             'currentLanguage' => $this->currentLanguage,
                             'anotherLanguage' => $this->getAnotherLanguage(),
                             'languageChangeUrl' => $this->getLanguageChangeUrl()
@@ -185,8 +229,7 @@ class Application {
                                 continue;
                             }
 
-                            $intro_text = file($this->dir . '/data/cache/'. $this->currentLanguage . '/' .$article->name.'.html');
-                            $articles[$key]->intro_text = implode('', array_slice($intro_text, $article->intro_text_start_html_line, $article->intro_text_end_html_line-$article->intro_text_start_html_line));
+                            $articles[$key]->intro_text = $this->getArticleIntroText($article);
                         }
 
                         echo $this->twig->render('index.twig', array(
@@ -197,11 +240,23 @@ class Application {
                         ));
                         break;
                     case 'about':
-                        echo $this->twig->render('about.twig');
+                        // The about page now lives at resume.dmtry.me; the route is
+                        // kept only to redirect old links and bookmarks.
+                        header('Location: ' . self::RESUME_URL, true, 301);
                         break;
                 }
                 break;
         }
+    }
+
+    /**
+     * `Status:` is only read by CGI/FastCGI, so under php -S every missing page
+     * answered 200; http_response_code() sets the status on both.
+     */
+    protected function renderNotFound()
+    {
+        http_response_code(404);
+        echo $this->twig->render('not-found.twig');
     }
 
     protected function getAnotherLanguage()

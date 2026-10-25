@@ -5,13 +5,34 @@
 
 namespace App\Twig;
 
-class Extension extends \Twig_Extension
+use Twig\Extension\AbstractExtension;
+use Twig\TwigFilter;
+use Twig\TwigFunction;
+
+class Extension extends AbstractExtension
 {
 	public function getFunctions()
 	{
 		return array(
-			new \Twig_SimpleFunction('dmitry_ages', array($this, 'dmitryAges')),
+			new TwigFunction('dmitry_ages', array($this, 'dmitryAges')),
 		);
+	}
+
+	public function getFilters()
+	{
+		return array(
+			new TwigFilter('trans', array($this, 'trans')),
+		);
+	}
+
+	/**
+	 * Replaces the {% trans %} tag of the abandoned twig/extensions package.
+	 * The domain is the one Application::bootstrap() binds through gettext,
+	 * so the msgids in app/locale stay valid.
+	 */
+	public function trans($message)
+	{
+		return gettext($message);
 	}
 
 	public function dmitryAges()
@@ -24,4 +45,4 @@ class Extension extends \Twig_Extension
 	{
 		return 'app_extension';
 	}
-} 
+}

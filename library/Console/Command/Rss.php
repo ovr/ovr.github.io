@@ -8,7 +8,7 @@ namespace App\Console\Command;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Zend\Feed\Writer\Feed;
+use Laminas\Feed\Writer\Feed;
 
 /**
  * Class Rss
@@ -32,7 +32,7 @@ class Rss extends Command
             self::RSS_AUTHOR => array(
                 'name'  => 'Dmitry Patsura',
                 'email' => 'talk@dmtry.me',
-                'uri'   => 'http://dmtry.me/about'
+                'uri'   => 'https://resume.dmtry.me/'
             )
         ),
         self::EN_LANG => array(
@@ -41,7 +41,7 @@ class Rss extends Command
             self::RSS_AUTHOR => array(
                 'name'  => 'Dmitry Patsura',
                 'email' => 'talk@dmtry.me',
-                'uri'   => 'http://en.dmtry.me/about'
+                'uri'   => 'https://resume.dmtry.me/'
             )
         )
     );
@@ -51,7 +51,7 @@ class Rss extends Command
         $this->setName('rss');
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $output->writeln("Start generating rss");
 
@@ -67,5 +67,7 @@ class Rss extends Command
             $feed->addAuthor($options[self::RSS_AUTHOR]);
 
         }
+
+        return self::SUCCESS;
     }
 }
